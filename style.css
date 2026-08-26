@@ -1,5 +1,5 @@
 /* ==========================================
-   ARDIYE // PURE BAUHAUS (RED & INK ONLY)
+   ARDIYE // PURE BAUHAUS (INK & RED ACCENTS)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
@@ -58,7 +58,7 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
   display: flex; align-items: center; justify-content: center;
   transition: all 0.2s ease;
 }
-.nav-link:hover { background: var(--b-red); color: var(--b-bg); } 
+.nav-link:hover { background: var(--b-red); color: var(--b-bg); } /* Menü hover: kırmızı */
 
 .menu-btn { 
   display: none; padding: 0 var(--pad); font-weight: 700; 
@@ -116,7 +116,7 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
 /* --- TYPOGRAPHY --- */
 .text-body { font-size: clamp(1rem, 1.2vw, 1.2rem); display: flex; flex-direction: column; gap: 20px; font-weight: 400; }
 
-/* --- GALLERY CARDS (HOVER: ONLY RED) --- */
+/* --- GALLERY CARDS (HOVER: ONLY BLACK NOW) --- */
 .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 
 .b-card { 
@@ -127,7 +127,7 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
 .b-card:hover { 
   transform: translate(-6px, -6px); 
   box-shadow: 6px 6px 0px var(--b-ink); 
-  background: var(--b-red); 
+  background: var(--b-ink); /* Hover rengi tamamen siyah yapıldı */
   color: var(--b-bg);
 }
 
@@ -148,19 +148,35 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
 .card-title { font-size: clamp(1.2rem, 1.5vw, 1.8rem); font-weight: 700; letter-spacing: -1px; line-height: 1.1; }
 .card-desc { font-size: 0.9rem; line-height: 1.4; }
 
-/* --- FOOTER / CONTACT --- */
+/* --- FOOTER / CONTACT (INVERTED - SOLID BLACK BLOCK) --- */
+#contact {
+  background-color: var(--b-ink);
+  color: var(--b-bg);
+}
+#contact .section-head {
+  border-right: 2.5px solid var(--b-bg); /* Siyah zemin üzerindeki dikey çizgi kağıt rengi oldu */
+}
+#contact .section-num {
+  color: var(--b-bg);
+  border-bottom-color: var(--b-bg);
+}
+#contact .section-desc {
+  color: rgba(245, 242, 235, 0.7); /* Alt metin biraz daha yumuşak */
+}
 .contact-grid { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+
 .contact-icon { 
-  color: var(--b-ink); transition: transform 0.2s, color 0.2s; 
+  color: var(--b-bg); /* İkon kağıt rengi */
+  transition: transform 0.2s, color 0.2s; 
   display: inline-block;
 }
-.contact-icon:hover { color: var(--b-red); transform: scale(1.05); }
+.contact-icon:hover { color: var(--b-red); transform: scale(1.05); } /* Kırmızı vurgu korundu */
 
 .social-nav { display: flex; flex-direction: column; gap: 10px; font-weight: 600; text-align: right; }
-.social-nav a { transition: all 0.2s; }
-.social-nav a:hover { color: var(--b-red); padding-right: 10px; }
+.social-nav a { color: var(--b-bg); transition: all 0.2s; } /* Yazılar kağıt rengi */
+.social-nav a:hover { color: var(--b-red); padding-right: 10px; } /* Hover Kırmızı */
 
-/* --- DETAIL PAGES (PORTRAIT SIZE ADJUSTED) --- */
+/* --- DETAIL PAGES --- */
 .detail-hero { margin-top: var(--h-height); padding: var(--pad); border-bottom: var(--border-main); }
 .detail-title { font-size: clamp(3rem, 6vw, 8rem); font-weight: 700; letter-spacing: -0.05em; line-height: 0.9; }
 
@@ -179,7 +195,10 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
   .menu-btn { display: flex; align-items: center; justify-content: center; }
   .grid-section { grid-template-columns: 1fr; }
   .section-head { border-right: none; border-bottom: var(--border-main); flex-direction: column; gap: 20px; }
-  .detail-img.portrait { width: 100%; } /* Mobilde portre tekrar tam genişlik olur */
+  
+  /* Footer mobilde alta düştüğünde yatay çizgi rengi kağıt rengi olur */
+  #contact .section-head { border-right: none; border-bottom: 2.5px solid var(--b-bg); }
+  .detail-img.portrait { width: 100%; } 
 }
 @media (max-width: 650px) {
   .card-grid { grid-template-columns: 1fr; }
