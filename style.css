@@ -160,12 +160,12 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
 .social-nav a { transition: all 0.2s; }
 .social-nav a:hover { color: var(--b-red); padding-right: 10px; }
 
-/* --- DETAIL PAGES --- */
+/* --- DETAIL PAGES (PORTRAIT SIZE ADJUSTED) --- */
 .detail-hero { margin-top: var(--h-height); padding: var(--pad); border-bottom: var(--border-main); }
 .detail-title { font-size: clamp(3rem, 6vw, 8rem); font-weight: 700; letter-spacing: -0.05em; line-height: 0.9; }
 
 .detail-img { width: 100%; border: var(--border-main); filter: grayscale(100%) contrast(1.2); display: block; }
-.detail-img.portrait { aspect-ratio: 3/4; object-fit: cover; }
+.detail-img.portrait { width: 50%; min-width: 220px; aspect-ratio: 3/4; object-fit: cover; }
 
 .detail-meta-list { display: flex; flex-direction: column; gap: 10px; font-weight: 600; font-size: 0.9rem; margin-top: 30px; }
 .detail-meta-list li { border-bottom: 2px solid var(--b-ink); padding-bottom: 5px; display: flex; justify-content: space-between; }
@@ -179,6 +179,7 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
   .menu-btn { display: flex; align-items: center; justify-content: center; }
   .grid-section { grid-template-columns: 1fr; }
   .section-head { border-right: none; border-bottom: var(--border-main); flex-direction: column; gap: 20px; }
+  .detail-img.portrait { width: 100%; } /* Mobilde portre tekrar tam genişlik olur */
 }
 @media (max-width: 650px) {
   .card-grid { grid-template-columns: 1fr; }
