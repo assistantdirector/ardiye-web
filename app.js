@@ -1,6 +1,3 @@
-/* ==========================================
-   APP.JS - RESPONSIVE MENU
-   ========================================== */
 document.addEventListener('DOMContentLoaded', () => {
   const menuBtn = document.querySelector('.menu-btn');
   const mobileDrawer = document.querySelector('.mobile-drawer');
