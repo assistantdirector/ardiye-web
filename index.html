@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ardiye / raw flux</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- FIXED ARCHITECTURAL HEADER -->
+  <header class="gallery-header">
+    <a href="#home" class="logo">ardiye.</a>
+    
+    <!-- Desktop Nav -->
+    <nav class="gallery-nav">
+      <a href="#narrative" class="nav-link">narrative</a>
+      <a href="#residents" class="nav-link">residents</a>
+      <a href="#works" class="nav-link">works</a>
+      <a href="#contact" class="nav-link">contact</a>
+    </nav>
+    
+    <!-- Mobile Toggle -->
+    <button class="menu-btn" aria-label="Toggle Menu">menu</button>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <nav class="mobile-drawer" aria-label="Mobile Navigation">
+    <a href="#narrative" class="nav-link">narrative</a>
+    <a href="#residents" class="nav-link">residents</a>
+    <a href="#works" class="nav-link">works</a>
+    <a href="#contact" class="nav-link">contact</a>
+  </nav>
+
+  <main>
+    
+    <!-- HERO: THE VOID -->
+    <section id="home" class="hero">
+      <h1 class="hero-title">
+        <span>collective art space</span>
+        raw flux.
+      </h1>
+    </section>
+
+    <!-- 01: NARRATIVE -->
+    <section id="narrative" class="grid-section">
+      <header class="section-head">
+        <h2 class="section-title">01 / narrative</h2>
+      </header>
+      <div class="split-grid">
+        <div class="grid-cell">
+          <p class="text-lead">ardiye is a space for the unfinished. we collect the raw, the unpolished, and the fragmented.</p>
+        </div>
+        <div class="grid-cell">
+          <div class="text-body">
+            <p>acting as an archive for continuous creation, we step away from traditional curation. we provide a platform where the texture of the process is the focal point.</p>
+            <p>there is no pursuit of the perfect result here; only the documentation of the flux.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02: RESIDENTS -->
+    <section id="residents" class="grid-section">
+      <header class="section-head">
+        <h2 class="section-title">02 / residents</h2>
+      </header>
+      <div class="split-grid">
+        
+        <div class="grid-cell">
+          <a href="artist-nazim.html" class="exhibit-card">
+            <div class="img-wrap">
+              <img src="images/nazim-portrait.jpg" alt="nazım kahramantürk" loading="lazy">
+            </div>
+            <div class="exhibit-meta">
+              <span>filmmaker & editor</span>
+              <span>view profile &rarr;</span>
+            </div>
+            <h3 class="exhibit-title">nazım kahramantürk</h3>
+            <p class="exhibit-desc">focuses on raw cinematography, multi-camera setups, and the disintegration of digital spatial memory.</p>
+          </a>
+        </div>
+
+        <div class="grid-cell">
+          <a href="artist-necef.html" class="exhibit-card">
+            <div class="img-wrap">
+              <img src="images/necef-portrait.jpg" alt="necef mengüverdi" loading="lazy">
+            </div>
+            <div class="exhibit-meta">
+              <span>visual artist</span>
+              <span>view profile &rarr;</span>
+            </div>
+            <h3 class="exhibit-title">necef mengüverdi</h3>
+            <p class="exhibit-desc">explores the intersection of spatial memory, raw materials, and fragmented narratives.</p>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 03: WORKS -->
+    <section id="works" class="grid-section">
+      <header class="section-head">
+        <h2 class="section-title">03 / selection</h2>
+      </header>
+      <div class="split-grid">
+        
+        <div class="grid-cell">
+          <a href="project-novaqua.html" class="exhibit-card">
+            <div class="img-wrap landscape">
+              <img src="images/novaqua-thumb.jpg" alt="protocol: novaqua" loading="lazy">
+            </div>
+            <div class="exhibit-meta">
+              <span>mixed media / 2026</span>
+              <span>view work &rarr;</span>
+            </div>
+            <h3 class="exhibit-title">protocol: novaqua</h3>
+            <p class="exhibit-desc">a continuous chemical reaction utilizing commercial water conditioner over submerged industrial debris.</p>
+          </a>
+        </div>
+
+        <div class="grid-cell">
+          <a href="project-ambient.html" class="exhibit-card">
+            <div class="img-wrap landscape">
+              <img src="images/ambient-thumb.jpg" alt="ambient architecture" loading="lazy">
+            </div>
+            <div class="exhibit-meta">
+              <span>a/v installation / 2025</span>
+              <span>view work &rarr;</span>
+            </div>
+            <h3 class="exhibit-title">ambient architecture</h3>
+            <p class="exhibit-desc">a study of how sound shapes empty spaces, mapped onto raw, uncolor-graded industrial footage.</p>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 04: CONTACT -->
+    <section id="contact" class="grid-section" style="border-bottom: none;">
+      <div class="footer-grid">
+        <div class="grid-cell contact-cell">
+          <span class="exhibit-meta" style="margin-bottom: clamp(10px, 2vh, 20px); border-top: none;">inquiries</span>
+          <a href="mailto:info@ardiye.art" class="email-link">info@ardiye.art</a>
+        </div>
+        <div class="grid-cell contact-cell" style="align-items: flex-end;">
+          <nav class="gallery-nav" style="flex-direction: column; gap: 1.5vh; text-align: right;">
+            <a href="#" class="nav-link">linkedin</a>
+            <a href="#" class="nav-link">vimeo</a>
+            <a href="#" class="nav-link">instagram</a>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
