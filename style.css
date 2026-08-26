@@ -1,5 +1,5 @@
 /* ==========================================
-   ARDIYE // PURE BAUHAUS (STABLE MASTER CSS)
+   ARDIYE // PURE BAUHAUS (RESPONSIVE MASTER CSS)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
@@ -9,8 +9,8 @@
   --b-red: #da291c;      
   
   --border-main: 2.5px solid var(--b-ink);
-  --pad: clamp(20px, 4vw, 50px);
-  --h-height: clamp(60px, 8vh, 80px);
+  --pad: clamp(16px, 3.5vw, 48px); /* Esnek ve optimize edilmiş iç boşluk */
+  --h-height: clamp(56px, 7vh, 72px);
   --f-main: 'Space Grotesk', sans-serif;
 }
 
@@ -21,7 +21,7 @@ body {
   background-color: var(--b-bg);
   color: var(--b-ink);
   font-family: var(--f-main);
-  font-size: 18px;
+  font-size: clamp(16px, 1.2vw, 18px);
   line-height: 1.5;
   text-transform: lowercase; 
   -webkit-font-smoothing: antialiased;
@@ -41,7 +41,7 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
 }
 
 .logo { 
-  font-weight: 700; font-size: clamp(1.5rem, 2vw, 2rem); 
+  font-weight: 700; font-size: clamp(1.3rem, 1.8vw, 1.8rem); 
   padding: 0 var(--pad); border-right: var(--border-main);
   height: 100%; display: flex; align-items: center;
   background: var(--b-ink); color: var(--b-bg);
@@ -51,7 +51,7 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
 
 .desktop-nav { display: flex; height: 100%; flex: 1; }
 .nav-link { 
-  padding: 0 clamp(15px, 2vw, 30px); font-weight: 600;
+  padding: 0 clamp(12px, 1.8vw, 24px); font-weight: 600;
   border-right: var(--border-main);
   display: flex; align-items: center; justify-content: center;
   transition: background 0.2s ease, color 0.2s ease;
@@ -70,63 +70,78 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
   background: var(--b-bg); border-bottom: var(--border-main);
   display: flex; flex-direction: column; 
   transform: translateY(-100%); opacity: 0; pointer-events: none;
-  transition: transform 0.4s ease, opacity 0.4s ease; z-index: 999;
+  transition: transform 0.3s ease, opacity 0.3s ease; z-index: 999;
 }
 .mobile-drawer.is-open { transform: translateY(0); opacity: 1; pointer-events: auto; }
 .mobile-drawer .nav-link { 
   border-right: none; border-bottom: var(--border-main); 
-  padding: 20px var(--pad); justify-content: flex-start; 
+  padding: 16px var(--pad); justify-content: flex-start; 
 }
 .mobile-drawer .nav-link:hover { background: var(--b-red); color: var(--b-bg); }
 
 /* --- HERO SECTION --- */
 .hero {
   margin-top: var(--h-height); 
-  min-height: 45vh; 
+  min-height: 40vh; 
   padding: var(--pad); 
   display: flex; align-items: flex-end;
   border-bottom: var(--border-main);
 }
 .hero-title {
-  font-size: clamp(3rem, 8vw, 10rem);
+  font-size: clamp(2.5rem, 7vw, 9rem);
   font-weight: 700; line-height: 0.85; letter-spacing: -0.05em;
 }
 .hero-title span { 
-  display: block; font-size: clamp(1rem, 1.5vw, 1.8rem); 
+  display: block; font-size: clamp(0.9rem, 1.3vw, 1.5rem); 
   font-weight: 400; color: var(--b-ink); 
-  margin-bottom: 15px; letter-spacing: 0; 
+  margin-bottom: 12px; letter-spacing: 0; 
 }
 
 /* --- GRID SYSTEM & SECTIONS --- */
-.grid-section { border-bottom: var(--border-main); display: grid; grid-template-columns: 35% 65%; align-items: center; }
+.grid-section { 
+  border-bottom: var(--border-main); 
+  display: grid; 
+  grid-template-columns: 35% 65%; 
+  align-items: center; 
+}
 
 .section-head { 
-  padding: var(--pad); border-right: var(--border-main); 
-  display: flex; flex-direction: column; justify-content: center; gap: 20px;
+  padding: var(--pad); 
+  border-right: var(--border-main); 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  gap: clamp(16px, 2.5vw, 24px);
   height: 100%;
 }
-.title-group { display: flex; flex-direction: column; gap: 5px; }
-.section-num { font-size: 1.2rem; font-weight: 700; color: var(--b-ink); border-bottom: 2px solid var(--b-ink); padding-bottom: 5px; width: max-content; }
-.section-title { font-size: clamp(2rem, 3.5vw, 3.5rem); font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
-.section-desc { font-size: clamp(1rem, 1.2vw, 1.1rem); font-weight: 600; line-height: 1.4; }
+.title-group { display: flex; flex-direction: column; gap: 4px; }
+.section-num { font-size: 1.1rem; font-weight: 700; color: var(--b-ink); border-bottom: 2px solid var(--b-ink); padding-bottom: 4px; width: max-content; }
+.section-title { font-size: clamp(1.8rem, 3vw, 3.2rem); font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
+.section-desc { font-size: clamp(0.95rem, 1.1vw, 1.05rem); font-weight: 600; line-height: 1.4; }
 
-.section-body { padding: var(--pad); height: 100%; display: flex; flex-direction: column; justify-content: center; }
+.section-body { 
+  padding: var(--pad); 
+  height: 100%; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+}
 
 /* --- TYPOGRAPHY --- */
-.text-body { font-size: clamp(1rem, 1.2vw, 1.2rem); display: flex; flex-direction: column; gap: 20px; font-weight: 400; }
+.text-body { font-size: clamp(0.95rem, 1.1vw, 1.15rem); display: flex; flex-direction: column; gap: 16px; font-weight: 400; }
 
 /* --- GALLERY CARDS --- */
-.card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; }
+.card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(12px, 2vw, 20px); width: 100%; }
 
 .b-card { 
-  border: var(--border-main); padding: 15px; 
-  display: flex; flex-direction: column; gap: 12px;
+  border: var(--border-main); padding: clamp(10px, 1.5vw, 16px); 
+  display: flex; flex-direction: column; gap: 10px;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; 
   background: var(--b-bg); color: var(--b-ink);
 }
 .b-card:hover { 
-  transform: translate(-6px, -6px); 
-  box-shadow: 6px 6px 0px var(--b-ink); 
+  transform: translate(-4px, -4px); 
+  box-shadow: 4px 4px 0px var(--b-ink); 
   background: var(--b-ink); 
   color: var(--b-bg);
 }
@@ -141,12 +156,12 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
 .b-card:hover .card-img img { filter: grayscale(0%); }
 
 .card-meta { 
-  font-size: 0.75rem; font-weight: 700; 
-  border-bottom: 2px solid currentColor; padding-bottom: 5px; 
+  font-size: 0.7rem; font-weight: 700; 
+  border-bottom: 2px solid currentColor; padding-bottom: 4px; 
   display: flex; justify-content: space-between; 
 }
-.card-title { font-size: clamp(1.2rem, 1.5vw, 1.8rem); font-weight: 700; letter-spacing: -1px; line-height: 1.1; }
-.card-desc { font-size: 0.9rem; line-height: 1.4; }
+.card-title { font-size: clamp(1.1rem, 1.3vw, 1.6rem); font-weight: 700; letter-spacing: -0.5px; line-height: 1.1; }
+.card-desc { font-size: 0.85rem; line-height: 1.4; }
 
 /* --- FOOTER / CONTACT --- */
 #contact {
@@ -169,29 +184,30 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  gap: 30px;
+  gap: 20px;
 }
 
 .footer-main-action {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .footer-email-massive {
-  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-size: clamp(1.5rem, 2.5vw, 2.8rem);
   font-weight: 700;
   letter-spacing: -0.04em;
   color: var(--b-bg);
   transition: color 0.2s ease;
   line-height: 1;
+  word-break: break-all;
 }
 .footer-email-massive:hover {
   color: var(--b-red);
 }
 
 .footer-note {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 400;
   color: rgba(245, 242, 235, 0.5);
   letter-spacing: 0.5px;
@@ -200,7 +216,7 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
 .social-nav { 
   display: flex; 
   flex-direction: column; 
-  gap: 10px; 
+  gap: 8px; 
   font-weight: 600; 
   text-align: right; 
 }
@@ -210,40 +226,41 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
 }
 .social-nav a:hover { 
   color: var(--b-red); 
-  padding-right: 10px; 
+  padding-right: 8px; 
 }
 
 /* --- DETAIL PAGES --- */
 .detail-hero { margin-top: var(--h-height); padding: var(--pad); border-bottom: var(--border-main); }
-.detail-title { font-size: clamp(3rem, 6vw, 8rem); font-weight: 700; letter-spacing: -0.05em; line-height: 0.9; }
+.detail-title { font-size: clamp(2.5rem, 5vw, 7rem); font-weight: 700; letter-spacing: -0.05em; line-height: 0.9; }
 
 .detail-img { width: 100%; border: var(--border-main); filter: grayscale(100%) contrast(1.2); display: block; }
-.detail-img.portrait { width: 50%; min-width: 220px; aspect-ratio: 3/4; object-fit: cover; }
+.detail-img.portrait { width: 50%; min-width: 200px; aspect-ratio: 3/4; object-fit: cover; }
 
-.detail-meta-list { display: flex; flex-direction: column; gap: 10px; font-weight: 600; font-size: 0.9rem; margin-top: 30px; }
-.detail-meta-list li { border-bottom: 2px solid var(--b-ink); padding-bottom: 5px; display: flex; justify-content: space-between; }
+.detail-meta-list { display: flex; flex-direction: column; gap: 8px; font-weight: 600; font-size: 0.85rem; margin-top: 24px; }
+.detail-meta-list li { border-bottom: 2px solid var(--b-ink); padding-bottom: 4px; display: flex; justify-content: space-between; }
 
-.back-link { font-size: clamp(2rem, 4vw, 4rem); font-weight: 700; letter-spacing: -2px; transition: color 0.2s ease; }
+.back-link { font-size: clamp(1.8rem, 3.5vw, 3.5rem); font-weight: 700; letter-spacing: -1.5px; transition: color 0.2s ease; }
 .back-link:hover { color: var(--b-red); }
 
-/* --- RESPONSIVE --- */
+/* --- RESPONSIVE BREAKPOINTS (AKILLI ESNETME) --- */
 @media (max-width: 950px) {
   .desktop-nav { display: none; }
   .menu-btn { display: flex; align-items: center; justify-content: center; }
   .grid-section { grid-template-columns: 1fr; align-items: stretch; }
-  .section-head { border-right: none; border-bottom: var(--border-main); flex-direction: column; gap: 20px; height: auto; }
+  .section-head { border-right: none; border-bottom: var(--border-main); flex-direction: column; gap: 16px; height: auto; }
   .section-body { height: auto; }
   
   #contact .section-head { border-right: none; border-bottom: 2.5px solid var(--b-bg); }
   .detail-img.portrait { width: 100%; } 
 }
+
 @media (max-width: 650px) {
   .card-grid { grid-template-columns: 1fr; }
   .footer-container { 
     flex-direction: column; 
     align-items: flex-start; 
-    gap: 40px; 
+    gap: 30px; 
   }
   .social-nav { text-align: left; }
-  .social-nav a:hover { padding-right: 0; padding-left: 10px; }
+  .social-nav a:hover { padding-right: 0; padding-left: 8px; }
 }
