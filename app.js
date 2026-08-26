@@ -11,11 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isOpen) {
         mobileDrawer.classList.remove('is-open');
         menuBtn.textContent = 'menu';
-        menuBtn.style.color = 'var(--b-ink)';
-        menuBtn.style.backgroundColor = 'transparent';
+        menuBtn.style.color = '';
+        menuBtn.style.backgroundColor = '';
       } else {
         mobileDrawer.classList.add('is-open');
         menuBtn.textContent = 'close';
+        /* Menü açılınca üst bar mantığında olduğu için burası da kırmızı olur */
         menuBtn.style.backgroundColor = 'var(--b-red)';
         menuBtn.style.color = 'var(--b-bg)';
       }
@@ -26,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => {
         mobileDrawer.classList.remove('is-open');
         menuBtn.textContent = 'menu';
-        menuBtn.style.backgroundColor = 'transparent';
-        menuBtn.style.color = 'var(--b-ink)';
+        menuBtn.style.backgroundColor = '';
+        menuBtn.style.color = '';
       });
     });
   }
