@@ -102,7 +102,6 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
 /* --- GRID SYSTEM & SECTIONS (35% / 65% RATIO) --- */
 .grid-section { border-bottom: var(--border-main); display: grid; grid-template-columns: 35% 65%; }
 
-/* Sol Kolon Artık Dolu ve Dengeli */
 .section-head { 
   padding: var(--pad); border-right: var(--border-main); 
   display: flex; flex-direction: column; justify-content: flex-start; gap: 30px;
@@ -160,6 +159,19 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
 .social-nav { display: flex; flex-direction: column; gap: 10px; font-weight: 600; text-align: right; }
 .social-nav a { transition: all 0.2s; }
 .social-nav a:hover { color: var(--b-red); padding-right: 10px; }
+
+/* --- DETAIL PAGES --- */
+.detail-hero { margin-top: var(--h-height); padding: var(--pad); border-bottom: var(--border-main); }
+.detail-title { font-size: clamp(3rem, 6vw, 8rem); font-weight: 700; letter-spacing: -0.05em; line-height: 0.9; }
+
+.detail-img { width: 100%; border: var(--border-main); filter: grayscale(100%) contrast(1.2); display: block; }
+.detail-img.portrait { aspect-ratio: 3/4; object-fit: cover; }
+
+.detail-meta-list { display: flex; flex-direction: column; gap: 10px; font-weight: 600; font-size: 0.9rem; margin-top: 30px; }
+.detail-meta-list li { border-bottom: 2px solid var(--b-ink); padding-bottom: 5px; display: flex; justify-content: space-between; }
+
+.back-link { font-size: clamp(2rem, 4vw, 4rem); font-weight: 700; letter-spacing: -2px; transition: color 0.2s; }
+.back-link:hover { color: var(--b-red); }
 
 /* --- RESPONSIVE BREAKPOINTS --- */
 @media (max-width: 950px) {
