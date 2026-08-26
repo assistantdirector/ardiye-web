@@ -1,5 +1,5 @@
 /* ==========================================
-   APP.JS - GALLERY INTERACTIONS
+   APP.JS - RESPONSIVE MENU
    ========================================== */
 document.addEventListener('DOMContentLoaded', () => {
   const menuBtn = document.querySelector('.menu-btn');
@@ -11,18 +11,23 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isOpen) {
         mobileDrawer.classList.remove('is-open');
         menuBtn.textContent = 'menu';
+        menuBtn.style.color = 'var(--b-ink)';
+        menuBtn.style.backgroundColor = 'transparent';
       } else {
         mobileDrawer.classList.add('is-open');
         menuBtn.textContent = 'close';
+        menuBtn.style.backgroundColor = 'var(--b-red)';
+        menuBtn.style.color = 'var(--b-bg)';
       }
     });
 
-    // Linke tıklandığında menüyü kapat
     const navLinks = mobileDrawer.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         mobileDrawer.classList.remove('is-open');
         menuBtn.textContent = 'menu';
+        menuBtn.style.backgroundColor = 'transparent';
+        menuBtn.style.color = 'var(--b-ink)';
       });
     });
   }
