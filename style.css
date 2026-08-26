@@ -1,5 +1,5 @@
 /* ==========================================
-   ARDIYE // PURE BAUHAUS (FOOTER LINE FIXED)
+   ARDIYE // PURE BAUHAUS (COMPLETE MASTER CSS)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
@@ -30,7 +30,7 @@ body {
 
 a, button { text-decoration: none; color: inherit; outline: none; background: none; border: none; cursor: pointer; }
 
-/* --- HEADER & NAVIGATION --- */
+/* --- HEADER & NAVIGATION (SAĞA YASLI) --- */
 .header {
   position: fixed; top: 0; left: 0; width: 100%; 
   height: var(--h-height);
@@ -49,10 +49,10 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
 }
 .logo:hover { background: var(--b-red); color: var(--b-bg); }
 
-.desktop-nav { display: flex; height: 100%; flex: 1; }
+.desktop-nav { display: flex; height: 100%; margin-left: auto; }
 .nav-link { 
   padding: 0 clamp(15px, 2vw, 30px); font-weight: 600;
-  border-right: var(--border-main);
+  border-left: var(--border-main);
   display: flex; align-items: center; justify-content: center;
   transition: background 0.2s ease, color 0.2s ease;
 }
@@ -74,7 +74,7 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
 }
 .mobile-drawer.is-open { transform: translateY(0); opacity: 1; pointer-events: auto; }
 .mobile-drawer .nav-link { 
-  border-right: none; border-bottom: var(--border-main); 
+  border-left: none; border-bottom: var(--border-main); 
   padding: 20px var(--pad); justify-content: flex-start; 
 }
 .mobile-drawer .nav-link:hover { background: var(--b-red); color: var(--b-bg); }
@@ -148,7 +148,7 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
 .card-title { font-size: clamp(1.4rem, 1.8vw, 2.1rem); font-weight: 700; letter-spacing: -0.5px; line-height: 1.1; }
 .card-desc { font-size: 1rem; line-height: 1.4; }
 
-/* --- FOOTER / CONTACT (KUSURSUZ ÇİZGİ ÇÖZÜMÜ) --- */
+/* --- FOOTER / CONTACT --- */
 #contact {
   background-color: var(--b-ink);
   color: var(--b-bg);
@@ -156,7 +156,6 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
   position: relative;
 }
 
-/* Border yerine mutlak konumlandırılmış temiz arka plan çizgisi */
 #contact::after {
   content: '';
   position: absolute;
@@ -169,7 +168,7 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
 }
 
 #contact .section-head {
-  border-right: none; /* Border kaldırıldı, pseudo-element (_after) kullanılıyor */
+  border-right: none;
 }
 #contact .section-num {
   color: var(--b-bg);
@@ -252,13 +251,12 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
 
 /* --- RESPONSIVE --- */
 @media (max-width: 950px) {
-  .desktop-nav { display: none; }
+  .desktop-nav { display: none; margin-left: 0; }
   .menu-btn { display: flex; align-items: center; justify-content: center; }
   .grid-section { grid-template-columns: 1fr; align-items: stretch; }
   .section-head { border-right: none; border-bottom: var(--border-main); flex-direction: column; gap: 20px; height: auto; }
   .section-body { height: auto; }
   
-  /* Mobilde dikey çizgi gizlenir, alt çizgi devreye girer */
   #contact::after { display: none; }
   #contact .section-head { border-bottom: 2.5px solid var(--b-bg) !important; }
 }
