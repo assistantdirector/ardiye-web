@@ -1,26 +1,25 @@
 /* ==========================================
-   ARDIYE // BAUHAUS & MONDRIAN THEME
+   ARDIYE // BAUHAUS THEME (COMPACT GALLERY)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
 :root {
-  /* Classic Bauhaus / Mondrian Palette */
+  /* Strict Bauhaus Palette (No Blue) */
   --b-bg: #f5f2eb;       /* warm paper white */
   --b-ink: #111111;      /* stark black */
   --b-red: #da291c;      /* bauhaus red */
-  --b-blue: #005a9c;     /* bauhaus blue */
   --b-yellow: #f9b000;   /* bauhaus yellow */
   
   /* Layout & Borders */
   --border-main: 2.5px solid var(--b-ink);
-  --pad: clamp(20px, 4vw, 60px);
+  --pad: clamp(20px, 4vw, 50px);
   --f-main: 'Space Grotesk', sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; background: var(--b-bg); }
 
-/* strict lowercase rule applied globally */
+/* strict lowercase rule */
 body {
   background-color: var(--b-bg);
   color: var(--b-ink);
@@ -60,7 +59,8 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
   display: flex; align-items: center; justify-content: center;
   transition: all 0.3s ease;
 }
-.nav-link:hover { background: var(--b-blue); color: var(--b-bg); }
+/* Mavi yerine Siyah hover */
+.nav-link:hover { background: var(--b-ink); color: var(--b-bg); } 
 
 .menu-btn { 
   display: none; padding: 0 var(--pad); font-weight: 700; 
@@ -83,7 +83,7 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
 
 /* --- HERO SECTION --- */
 .hero {
-  min-height: 85vh; padding: calc(clamp(60px, 8vh, 80px) + var(--pad)) var(--pad) var(--pad);
+  min-height: 80vh; padding: calc(clamp(60px, 8vh, 80px) + var(--pad)) var(--pad) var(--pad);
   display: flex; align-items: flex-end;
   border-bottom: var(--border-main);
 }
@@ -99,89 +99,63 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
   padding: var(--pad); border-right: var(--border-main); 
   display: flex; flex-direction: column; justify-content: space-between;
 }
-.section-title { font-size: clamp(2rem, 4vw, 4rem); font-weight: 700; letter-spacing: -0.04em; }
-.section-num { font-size: 1.5rem; font-weight: 700; color: var(--b-blue); }
+.section-title { font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 700; letter-spacing: -0.04em; }
+.section-num { font-size: 1.5rem; font-weight: 700; color: var(--b-red); }
 
 .section-body { padding: var(--pad); }
-.section-body.no-pad { padding: 0; } /* Mondrian grid tam otursun diye */
 
 /* --- TYPOGRAPHY --- */
-.text-lead { font-size: clamp(1.2rem, 2vw, 2.5rem); font-weight: 600; line-height: 1.3; margin-bottom: 30px; }
-.text-body { font-size: clamp(1rem, 1.2vw, 1.2rem); display: flex; flex-direction: column; gap: 20px; font-weight: 400; }
+.text-lead { font-size: clamp(1.2rem, 2vw, 2rem); font-weight: 600; line-height: 1.3; margin-bottom: 30px; }
+.text-body { font-size: clamp(0.95rem, 1.2vw, 1.1rem); display: flex; flex-direction: column; gap: 20px; font-weight: 400; }
 
-/* --- CONCENTRATED RESIDENTS LIST (MONDRIAN INDEX) --- */
-.list-grid { display: flex; flex-direction: column; height: 100%; }
-.list-card {
-  display: flex; align-items: stretch;
-  border-bottom: var(--border-main);
-  background: var(--b-bg);
-  transition: background 0.3s ease, color 0.3s ease;
+/* --- GALLERY CARDS (HALF-SIZE / 2 COLUMNS) --- */
+.card-grid { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; /* Gallery view: yan yana iki kart */
+  gap: 20px; 
 }
-.list-card:last-child { border-bottom: none; }
-
-.list-img {
-  width: clamp(80px, 12vw, 140px); /* Küçük ve konsantre fotoğraf */
-  border-right: var(--border-main);
-  background: var(--b-ink);
-  flex-shrink: 0;
-}
-.list-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.2); transition: 0.3s; }
-
-.list-info {
-  flex: 1; padding: clamp(15px, 2vw, 30px);
-  display: flex; flex-direction: column; justify-content: center;
-}
-.list-meta { font-size: clamp(0.75rem, 1vw, 0.9rem); font-weight: 700; color: var(--b-blue); margin-bottom: 5px; }
-.list-title { font-size: clamp(1.2rem, 2vw, 2rem); font-weight: 700; letter-spacing: -0.5px; }
-
-.list-arrow {
-  padding: 0 clamp(15px, 2vw, 30px); font-size: 2rem; font-weight: 700;
-  border-left: var(--border-main); display: flex; align-items: center;
-}
-
-/* Hover Etkileri - Mondrian Renkleri */
-.list-card:hover { background: var(--b-yellow); }
-.list-card:nth-child(even):hover { background: var(--b-blue); color: var(--b-bg); }
-.list-card:hover .list-img img { filter: grayscale(0%); }
-.list-card:nth-child(even):hover .list-meta { color: var(--b-bg); }
-
-
-/* --- CARDS (WORKS) --- */
-.card-grid { display: grid; grid-template-columns: 1fr; gap: var(--pad); }
 .b-card { 
-  border: var(--border-main); padding: 20px; 
-  display: flex; flex-direction: column; gap: 15px;
+  border: var(--border-main); padding: 15px; 
+  display: flex; flex-direction: column; gap: 12px;
   transition: all 0.3s ease; background: var(--b-bg);
 }
-.b-card:hover { transform: translate(-8px, -8px); box-shadow: 8px 8px 0px var(--b-ink); }
-.b-card:nth-child(odd):hover { background: var(--b-yellow); }
-.b-card:nth-child(even):hover { background: var(--b-blue); color: var(--b-bg); }
+.b-card:hover { transform: translate(-6px, -6px); box-shadow: 6px 6px 0px var(--b-ink); }
+/* Hover renkleri: Sarı ve Siyah */
+.b-card:nth-child(odd):hover { background: var(--b-yellow); color: var(--b-ink); }
+.b-card:nth-child(even):hover { background: var(--b-ink); color: var(--b-bg); }
 
 .card-img { 
-  width: 100%; aspect-ratio: 1/1; 
+  width: 100%; aspect-ratio: 4/3; 
   border: var(--border-main); overflow: hidden; 
   background: var(--b-ink);
 }
-.card-img.landscape { aspect-ratio: 16/9; }
+.card-img.square { aspect-ratio: 1/1; }
 .card-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.2); }
 .b-card:hover .card-img img { filter: grayscale(0%); }
 
-.card-meta { font-size: 0.85rem; font-weight: 700; border-bottom: 2px solid currentColor; padding-bottom: 5px; display: flex; justify-content: space-between; }
-.card-title { font-size: 2rem; font-weight: 700; letter-spacing: -1px; }
-.card-desc { font-size: 1rem; }
+.card-meta { 
+  font-size: 0.75rem; font-weight: 700; 
+  border-bottom: 2px solid currentColor; padding-bottom: 5px; 
+  display: flex; justify-content: space-between; 
+}
+.card-title { font-size: clamp(1.2rem, 1.5vw, 1.8rem); font-weight: 700; letter-spacing: -1px; line-height: 1.1; }
+.card-desc { font-size: 0.9rem; line-height: 1.4; }
 
 /* --- FOOTER / CONTACT --- */
 .contact-link { font-size: clamp(2rem, 5vw, 6rem); font-weight: 700; letter-spacing: -2px; }
 .contact-link:hover { color: var(--b-red); }
 
 .social-nav { display: flex; flex-direction: column; gap: 10px; font-weight: 600; }
-.social-nav a:hover { color: var(--b-blue); padding-left: 10px; }
+.social-nav a:hover { color: var(--b-red); padding-left: 10px; }
 
 /* --- RESPONSIVE BREAKPOINTS --- */
-@media (max-width: 900px) {
+@media (max-width: 950px) {
   .desktop-nav { display: none; }
   .menu-btn { display: flex; align-items: center; justify-content: center; }
   .grid-section { grid-template-columns: 1fr; }
-  .section-head { border-right: none; border-bottom: var(--border-main); gap: 20px; }
+  .section-head { border-right: none; border-bottom: var(--border-main); gap: 20px; flex-direction: row; align-items: center; }
+}
+@media (max-width: 650px) {
+  /* Sadece küçük telefonlarda alt alta inerler */
   .card-grid { grid-template-columns: 1fr; }
 }
