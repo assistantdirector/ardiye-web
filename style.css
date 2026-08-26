@@ -1,15 +1,13 @@
 /* ==========================================
-   ARDIYE // PURE BAUHAUS (INK & RED ACCENTS)
+   ARDIYE // PURE BAUHAUS (OPTIMIZED MASTER CSS)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
 :root {
-  /* Strictly Red & Black Palette */
   --b-bg: #f5f2eb;       
   --b-ink: #111111;      
   --b-red: #da291c;      
   
-  /* Layout */
   --border-main: 2.5px solid var(--b-ink);
   --pad: clamp(20px, 4vw, 50px);
   --h-height: clamp(60px, 8vh, 80px);
@@ -47,7 +45,7 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
   padding: 0 var(--pad); border-right: var(--border-main);
   height: 100%; display: flex; align-items: center;
   background: var(--b-ink); color: var(--b-bg);
-  transition: all 0.3s ease;
+  transition: background 0.3s ease;
 }
 .logo:hover { background: var(--b-red); color: var(--b-bg); }
 
@@ -56,13 +54,13 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
   padding: 0 clamp(15px, 2vw, 30px); font-weight: 600;
   border-right: var(--border-main);
   display: flex; align-items: center; justify-content: center;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
-.nav-link:hover { background: var(--b-red); color: var(--b-bg); } /* Menü hover: kırmızı */
+.nav-link:hover { background: var(--b-red); color: var(--b-bg); } 
 
 .menu-btn { 
   display: none; padding: 0 var(--pad); font-weight: 700; 
-  height: 100%; border-left: var(--border-main); transition: all 0.2s ease;
+  height: 100%; border-left: var(--border-main); transition: background 0.2s ease;
 }
 .menu-btn:hover { background: var(--b-red); color: var(--b-bg); }
 
@@ -72,7 +70,7 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
   background: var(--b-bg); border-bottom: var(--border-main);
   display: flex; flex-direction: column; 
   transform: translateY(-100%); opacity: 0; pointer-events: none;
-  transition: all 0.4s ease; z-index: 999;
+  transition: transform 0.4s ease, opacity 0.4s ease; z-index: 999;
 }
 .mobile-drawer.is-open { transform: translateY(0); opacity: 1; pointer-events: auto; }
 .mobile-drawer .nav-link { 
@@ -99,7 +97,7 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
   margin-bottom: 20px; letter-spacing: 0; 
 }
 
-/* --- GRID SYSTEM & SECTIONS (35% / 65% RATIO) --- */
+/* --- GRID SYSTEM & SECTIONS (35% / 65%) --- */
 .grid-section { border-bottom: var(--border-main); display: grid; grid-template-columns: 35% 65%; }
 
 .section-head { 
@@ -116,18 +114,19 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
 /* --- TYPOGRAPHY --- */
 .text-body { font-size: clamp(1rem, 1.2vw, 1.2rem); display: flex; flex-direction: column; gap: 20px; font-weight: 400; }
 
-/* --- GALLERY CARDS (HOVER: ONLY BLACK NOW) --- */
+/* --- GALLERY CARDS (HOVER: SOLID BLACK) --- */
 .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 
 .b-card { 
   border: var(--border-main); padding: 15px; 
   display: flex; flex-direction: column; gap: 12px;
-  transition: all 0.2s ease; background: var(--b-bg); color: var(--b-ink);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; 
+  background: var(--b-bg); color: var(--b-ink);
 }
 .b-card:hover { 
   transform: translate(-6px, -6px); 
   box-shadow: 6px 6px 0px var(--b-ink); 
-  background: var(--b-ink); /* Hover rengi tamamen siyah yapıldı */
+  background: var(--b-ink); 
   color: var(--b-bg);
 }
 
@@ -137,7 +136,7 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
   background: var(--b-ink);
 }
 .card-img.square { aspect-ratio: 1/1; }
-.card-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.2); transition: filter 0.3s; }
+.card-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.2); transition: filter 0.3s ease; }
 .b-card:hover .card-img img { filter: grayscale(0%); }
 
 .card-meta { 
@@ -148,33 +147,33 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
 .card-title { font-size: clamp(1.2rem, 1.5vw, 1.8rem); font-weight: 700; letter-spacing: -1px; line-height: 1.1; }
 .card-desc { font-size: 0.9rem; line-height: 1.4; }
 
-/* --- FOOTER / CONTACT (INVERTED - SOLID BLACK BLOCK) --- */
+/* --- FOOTER / CONTACT (SOLID BLACK BLOCK) --- */
 #contact {
   background-color: var(--b-ink);
   color: var(--b-bg);
 }
 #contact .section-head {
-  border-right: 2.5px solid var(--b-bg); /* Siyah zemin üzerindeki dikey çizgi kağıt rengi oldu */
+  border-right: 2.5px solid var(--b-bg);
 }
 #contact .section-num {
   color: var(--b-bg);
   border-bottom-color: var(--b-bg);
 }
 #contact .section-desc {
-  color: rgba(245, 242, 235, 0.7); /* Alt metin biraz daha yumuşak */
+  color: rgba(245, 242, 235, 0.7);
 }
 .contact-grid { display: flex; align-items: center; justify-content: space-between; height: 100%; }
 
 .contact-icon { 
-  color: var(--b-bg); /* İkon kağıt rengi */
-  transition: transform 0.2s, color 0.2s; 
+  color: var(--b-bg); 
+  transition: transform 0.2s ease, color 0.2s ease; 
   display: inline-block;
 }
-.contact-icon:hover { color: var(--b-red); transform: scale(1.05); } /* Kırmızı vurgu korundu */
+.contact-icon:hover { color: var(--b-red); transform: scale(1.05); }
 
 .social-nav { display: flex; flex-direction: column; gap: 10px; font-weight: 600; text-align: right; }
-.social-nav a { color: var(--b-bg); transition: all 0.2s; } /* Yazılar kağıt rengi */
-.social-nav a:hover { color: var(--b-red); padding-right: 10px; } /* Hover Kırmızı */
+.social-nav a { color: var(--b-bg); transition: color 0.2s ease, padding 0.2s ease; }
+.social-nav a:hover { color: var(--b-red); padding-right: 10px; }
 
 /* --- DETAIL PAGES --- */
 .detail-hero { margin-top: var(--h-height); padding: var(--pad); border-bottom: var(--border-main); }
@@ -186,7 +185,7 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
 .detail-meta-list { display: flex; flex-direction: column; gap: 10px; font-weight: 600; font-size: 0.9rem; margin-top: 30px; }
 .detail-meta-list li { border-bottom: 2px solid var(--b-ink); padding-bottom: 5px; display: flex; justify-content: space-between; }
 
-.back-link { font-size: clamp(2rem, 4vw, 4rem); font-weight: 700; letter-spacing: -2px; transition: color 0.2s; }
+.back-link { font-size: clamp(2rem, 4vw, 4rem); font-weight: 700; letter-spacing: -2px; transition: color 0.2s ease; }
 .back-link:hover { color: var(--b-red); }
 
 /* --- RESPONSIVE BREAKPOINTS --- */
@@ -196,7 +195,6 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
   .grid-section { grid-template-columns: 1fr; }
   .section-head { border-right: none; border-bottom: var(--border-main); flex-direction: column; gap: 20px; }
   
-  /* Footer mobilde alta düştüğünde yatay çizgi rengi kağıt rengi olur */
   #contact .section-head { border-right: none; border-bottom: 2.5px solid var(--b-bg); }
   .detail-img.portrait { width: 100%; } 
 }
