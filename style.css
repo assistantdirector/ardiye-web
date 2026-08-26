@@ -1,5 +1,5 @@
 /* ==========================================
-   ARDIYE // PURE BAUHAUS (STABLE MASTER CSS)
+   ARDIYE // PURE BAUHAUS (FOOTER LINE FIXED)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
@@ -148,14 +148,28 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
 .card-title { font-size: clamp(1.4rem, 1.8vw, 2.1rem); font-weight: 700; letter-spacing: -0.5px; line-height: 1.1; }
 .card-desc { font-size: 1rem; line-height: 1.4; }
 
-/* --- FOOTER / CONTACT --- */
+/* --- FOOTER / CONTACT (KUSURSUZ ÇİZGİ ÇÖZÜMÜ) --- */
 #contact {
   background-color: var(--b-ink);
   color: var(--b-bg);
   padding-bottom: clamp(30px, 5vw, 60px);
+  position: relative;
 }
+
+/* Border yerine mutlak konumlandırılmış temiz arka plan çizgisi */
+#contact::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 35%;
+  width: 2.5px;
+  height: 100%;
+  background-color: var(--b-bg);
+  pointer-events: none;
+}
+
 #contact .section-head {
-  border-right: 2.5px solid var(--b-bg);
+  border-right: none; /* Border kaldırıldı, pseudo-element (_after) kullanılıyor */
 }
 #contact .section-num {
   color: var(--b-bg);
@@ -244,8 +258,9 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
   .section-head { border-right: none; border-bottom: var(--border-main); flex-direction: column; gap: 20px; height: auto; }
   .section-body { height: auto; }
   
-  #contact .section-head { border-right: none; border-bottom: 2.5px solid var(--b-bg); }
-  .detail-img.portrait { width: 100%; } 
+  /* Mobilde dikey çizgi gizlenir, alt çizgi devreye girer */
+  #contact::after { display: none; }
+  #contact .section-head { border-bottom: 2.5px solid var(--b-bg) !important; }
 }
 @media (max-width: 650px) {
   .card-grid { grid-template-columns: 1fr; }
