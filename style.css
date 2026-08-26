@@ -1,5 +1,6 @@
+
 /* ==========================================
-   ARDIYE // PURE BAUHAUS (FINAL MASTER CSS)
+   ARDIYE // PURE BAUHAUS (FINAL FIXED CSS)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
@@ -79,43 +80,44 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
 }
 .mobile-drawer .nav-link:hover { background: var(--b-red); color: var(--b-bg); }
 
-/* --- HERO SECTION --- */
+/* --- HERO SECTION (YÜKSEKLİĞİ DÜŞÜRÜLDÜ VE DENGELLENDİ) --- */
 .hero {
   margin-top: var(--h-height); 
-  min-height: calc(75vh - var(--h-height)); 
+  min-height: 45vh; /* Aşırı yer kaplaması engellendi */
   padding: var(--pad); 
   display: flex; align-items: flex-end;
   border-bottom: var(--border-main);
 }
 .hero-title {
-  font-size: clamp(3rem, 10vw, 12rem);
+  font-size: clamp(3rem, 8vw, 10rem);
   font-weight: 700; line-height: 0.85; letter-spacing: -0.05em;
 }
 .hero-title span { 
-  display: block; font-size: clamp(1rem, 2vw, 2rem); 
+  display: block; font-size: clamp(1rem, 1.5vw, 1.8rem); 
   font-weight: 400; color: var(--b-ink); 
-  margin-bottom: 20px; letter-spacing: 0; 
+  margin-bottom: 15px; letter-spacing: 0; 
 }
 
-/* --- GRID SYSTEM & SECTIONS (35% / 65%) --- */
-.grid-section { border-bottom: var(--border-main); display: grid; grid-template-columns: 35% 65%; }
+/* --- GRID SYSTEM & SECTIONS (35% / 65% - DİKEY ORTALAMA EKLENDİ) --- */
+.grid-section { border-bottom: var(--border-main); display: grid; grid-template-columns: 35% 65%; align-items: center; }
 
 .section-head { 
   padding: var(--pad); border-right: var(--border-main); 
-  display: flex; flex-direction: column; justify-content: flex-start; gap: 30px;
+  display: flex; flex-direction: column; justify-content: center; gap: 20px;
+  height: 100%;
 }
 .title-group { display: flex; flex-direction: column; gap: 5px; }
 .section-num { font-size: 1.2rem; font-weight: 700; color: var(--b-ink); border-bottom: 2px solid var(--b-ink); padding-bottom: 5px; width: max-content; }
 .section-title { font-size: clamp(2rem, 3.5vw, 3.5rem); font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
 .section-desc { font-size: clamp(1rem, 1.2vw, 1.1rem); font-weight: 600; line-height: 1.4; }
 
-.section-body { padding: var(--pad); }
+.section-body { padding: var(--pad); height: 100%; display: flex; flex-direction: column; justify-content: center; }
 
 /* --- TYPOGRAPHY --- */
 .text-body { font-size: clamp(1rem, 1.2vw, 1.2rem); display: flex; flex-direction: column; gap: 20px; font-weight: 400; }
 
 /* --- GALLERY CARDS (HOVER: SOLID BLACK) --- */
-.card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; }
 
 .b-card { 
   border: var(--border-main); padding: 15px; 
@@ -167,7 +169,7 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
+  width: 100%;
   gap: 30px;
 }
 
@@ -228,8 +230,9 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
 @media (max-width: 950px) {
   .desktop-nav { display: none; }
   .menu-btn { display: flex; align-items: center; justify-content: center; }
-  .grid-section { grid-template-columns: 1fr; }
-  .section-head { border-right: none; border-bottom: var(--border-main); flex-direction: column; gap: 20px; }
+  .grid-section { grid-template-columns: 1fr; align-items: stretch; }
+  .section-head { border-right: none; border-bottom: var(--border-main); flex-direction: column; gap: 20px; height: auto; }
+  .section-body { height: auto; }
   
   #contact .section-head { border-right: none; border-bottom: 2.5px solid var(--b-bg); }
   .detail-img.portrait { width: 100%; } 
