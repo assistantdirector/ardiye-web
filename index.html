@@ -3,107 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ardiye. | collective & archive</title>
+  <title>ardiye / collective</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="container">
+  <!-- FIXED HEADER -->
+  <header class="header">
+    <a href="#home" class="logo">ardiye.</a>
     
-    <!-- LEFT COLUMN: LEDGER INDEX -->
-    <aside class="sidebar">
-      <div class="brand-header">
-        <a href="#top" class="logo">ardiye.</a>
-        <span class="est-date">collective art space / physical archive</span>
+    <nav class="desktop-nav">
+      <a href="#narrative" class="nav-link">narrative</a>
+      <a href="#residents" class="nav-link">residents</a>
+      <a href="#works" class="nav-link">works</a>
+      <a href="#contact" class="nav-link">contact</a>
+    </nav>
+    
+    <button class="menu-btn" aria-label="menu">menu</button>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <nav class="mobile-drawer">
+    <a href="#narrative" class="nav-link">narrative</a>
+    <a href="#residents" class="nav-link">residents</a>
+    <a href="#works" class="nav-link">works</a>
+    <a href="#contact" class="nav-link">contact</a>
+  </nav>
+
+  <main>
+    
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <h1 class="hero-title">
+        <span>collective art space</span>
+        raw flux.
+      </h1>
+    </section>
+
+    <!-- 01: NARRATIVE -->
+    <section id="narrative" class="grid-section">
+      <div class="section-head">
+        <span class="section-num">01</span>
+        <h2 class="section-title">narrative</h2>
       </div>
-      
-      <ul class="nav-index">
-        <li><a href="#theory"><span>01. theory & manifesto</span> <span>&rarr;</span></a></li>
-        <li><a href="#inventory"><span>02. inventory (residents)</span> <span>&rarr;</span></a></li>
-        <li><a href="#production"><span>03. physical production</span> <span>&rarr;</span></a></li>
-      </ul>
-
-      <p class="manifesto-brief">
-        "the process of production holds more weight than the exhibited final piece. this is not a space for polished outcomes; it is where the casting, the editing, and the mechanics are archived."
-      </p>
-    </aside>
-
-    <!-- RIGHT COLUMN: WORKSPACE -->
-    <main class="workspace">
-      
-      <!-- 01: THEORY -->
-      <section id="theory">
-        <header class="section-header">
-          <h2 class="section-title">theory & manifesto</h2>
-          <span class="section-meta">ref: man-01</span>
-        </header>
-        <div class="content-block">
-          <div class="academic-text">
-            <p><strong>ardiye</strong> is a physical entity and documentation center centered entirely around artistic labor. utilizing an academic methodology, it records the raw, unhewn stages of the production process.</p>
-            <p>rejecting the sterile, isolated distance of traditional "white cube" galleries, our focus remains on material resistance, the rigid mathematics of the editing table, and the intellectual foundation behind the craftsmanship.</p>
-          </div>
+      <div class="section-body">
+        <p class="text-lead">ardiye is a space for the unfinished. we collect the raw, the unpolished, and the fragmented.</p>
+        <div class="text-body">
+          <p>acting as an archive for continuous creation, we step away from traditional curation. we provide a platform where the texture of the process is the focal point.</p>
+          <p>there is no pursuit of the perfect result here; only the documentation of the flux.</p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- 02: RESIDENTS -->
-      <section id="inventory">
-        <header class="section-header">
-          <h2 class="section-title">inventory (residents)</h2>
-          <span class="section-meta">ref: env-02</span>
-        </header>
-        <div class="content-block">
-          <div class="inventory-grid">
-            
-            <a href="artist-nazim.html" class="inventory-item">
-              <div class="item-visual"><img src="images/nazim-portrait.jpg" alt="nazım kahramantürk"></div>
-              <span class="item-ref">[FIG. 01] FILMMAKER / EDITOR</span>
-              <h3 class="item-title">nazım kahramantürk</h3>
-              <p class="item-desc">rooted in fine arts cinematography. focuses on multi-cam directing systems, post-production mechanics, and the disintegration of digital spatial memory.</p>
-            </a>
+    <!-- 02: RESIDENTS -->
+    <section id="residents" class="grid-section">
+      <div class="section-head">
+        <span class="section-num">02</span>
+        <h2 class="section-title">residents</h2>
+      </div>
+      <div class="section-body">
+        <div class="card-grid">
+          
+          <!-- Nazım -->
+          <a href="artist-nazim.html" class="b-card">
+            <div class="card-meta"><span>filmmaker & editor</span><span>&rarr;</span></div>
+            <div class="card-img"><img src="images/nazim-portrait.jpg" alt="nazım kahramantürk"></div>
+            <h3 class="card-title">nazım kahramantürk</h3>
+            <p class="card-desc">focuses on raw cinematography, multi-camera setups, and the disintegration of digital spatial memory.</p>
+          </a>
 
-            <a href="artist-necef.html" class="inventory-item">
-              <div class="item-visual"><img src="images/necef-portrait.jpg" alt="necef mengüverdi"></div>
-              <span class="item-ref">[FIG. 02] VISUAL ARTIST</span>
-              <h3 class="item-title">necef mengüverdi</h3>
-              <p class="item-desc">explores the intersection of spatial memory and raw materials. examines the fragmented dialogues physical forms establish over time within an academic framework.</p>
-            </a>
+          <!-- Necef -->
+          <a href="artist-necef.html" class="b-card">
+            <div class="card-meta"><span>visual artist</span><span>&rarr;</span></div>
+            <div class="card-img"><img src="images/necef-portrait.jpg" alt="necef mengüverdi"></div>
+            <h3 class="card-title">necef mengüverdi</h3>
+            <p class="card-desc">explores the intersection of spatial memory, raw materials, and fragmented narratives.</p>
+          </a>
 
-          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- 03: WORKS -->
-      <section id="production">
-        <header class="section-header">
-          <h2 class="section-title">physical production</h2>
-          <span class="section-meta">ref: prd-03</span>
-        </header>
-        <div class="content-block">
-          <div class="inventory-grid">
-            
-            <a href="project-novaqua.html" class="inventory-item">
-              <div class="item-visual landscape"><img src="images/novaqua-thumb.jpg" alt="protocol: novaqua"></div>
-              <span class="item-ref">MATERIAL / 2026</span>
-              <h3 class="item-title">protocol: novaqua</h3>
-              <p class="item-desc">a continuous chemical reaction documentation, executed by applying a synthetic protective layer over submerged industrial debris.</p>
-            </a>
+    <!-- 03: WORKS -->
+    <section id="works" class="grid-section">
+      <div class="section-head">
+        <span class="section-num">03</span>
+        <h2 class="section-title">works</h2>
+      </div>
+      <div class="section-body">
+        <div class="card-grid">
+          
+          <!-- Novaqua -->
+          <a href="project-novaqua.html" class="b-card">
+            <div class="card-meta"><span>mixed media / 2026</span><span>&rarr;</span></div>
+            <div class="card-img landscape"><img src="images/novaqua-thumb.jpg" alt="protocol: novaqua"></div>
+            <h3 class="card-title">protocol: novaqua</h3>
+            <p class="card-desc">a continuous chemical reaction utilizing commercial water conditioner over submerged industrial debris.</p>
+          </a>
 
-          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- FOOTNOTES -->
-      <footer class="footnotes">
-        <ul>
-          <li><strong>INQUIRIES:</strong> <a href="mailto:info@ardiye.art">info@ardiye.art</a></li>
-          <li><strong>LOCATION:</strong> physical space / izmir</li>
-          <li><strong>LAST UPDATE:</strong> august 2026</li>
-          <li><strong>REGISTRY:</strong> open archive logs</li>
-        </ul>
-      </footer>
+    <!-- 04: CONTACT -->
+    <section id="contact" class="grid-section" style="border-bottom: none;">
+      <div class="section-head">
+        <span class="section-num">04</span>
+        <h2 class="section-title">contact</h2>
+      </div>
+      <div class="section-body" style="display: flex; flex-direction: column; justify-content: space-between; gap: 40px;">
+        <div>
+          <span style="font-weight: 700; color: var(--b-red); margin-bottom: 10px; display: block;">inquiries</span>
+          <a href="mailto:info@ardiye.art" class="contact-link">info@ardiye.art</a>
+        </div>
+        <nav class="social-nav">
+          <a href="#">&rarr; linkedin</a>
+          <a href="#">&rarr; vimeo</a>
+          <a href="#">&rarr; instagram</a>
+        </nav>
+      </div>
+    </section>
 
-    </main>
-  </div>
+  </main>
 
+  <script src="app.js"></script>
 </body>
 </html>
