@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         mobileDrawer.classList.add('is-open');
         menuBtn.textContent = 'close';
-        /* Menü açılınca üst bar mantığında olduğu için burası da kırmızı olur */
         menuBtn.style.backgroundColor = 'var(--b-red)';
         menuBtn.style.color = 'var(--b-bg)';
       }
