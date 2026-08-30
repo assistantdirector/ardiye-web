@@ -1,62 +1,59 @@
-/* ==========================================
-   ARDIYÉ // PURE BAUHAUS (FIXED ALIGNMENT & MOBILE NAV)
-   ========================================== */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
-
-:root {
-  --b-bg: #f5f2eb;       
-  --b-ink: #111111;      
-  --b-red: #da291c;      
-  
-  --border-main: 2.5px solid var(--b-ink);
-  --pad: clamp(20px, 4vw, 50px);
-  --h-height: clamp(60px, 8vh, 80px);
-  --f-main: 'Space Grotesk', sans-serif;
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; background: var(--b-bg); }
-
-body {
-  background-color: var(--b-bg);
-  color: var(--b-ink);
-  font-family: var(--f-main);
-  font-size: 18px;
-  line-height: 1.5;
-  text-transform: lowercase; 
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-
-a, button { text-decoration: none; color: inherit; outline: none; background: none; border: none; cursor: pointer; }
-
-/* --- HEADER & NAVIGATION --- */
+/* --- HEADER & NAVIGATION (01 IZGARASINA KİLİTLİ) --- */
 .header {
-  position: fixed; top: 0; left: 0; width: 100%; 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
   height: var(--h-height);
-  display: flex; justify-content: space-between; align-items: stretch;
+  display: grid;
+  grid-template-columns: 35% 65%; /* Tam olarak aşağıdaki bölümlerle aynı oran */
   background: var(--b-bg);
   border-bottom: var(--border-main);
   z-index: 1000;
 }
 
 .logo { 
-  font-weight: 700; font-size: clamp(1.5rem, 2vw, 2rem); 
-  padding: 0 var(--pad); border-right: var(--border-main);
-  display: flex; align-items: center;
-  background: var(--b-ink); color: var(--b-bg);
-  transition: background 0.3s ease;
-}
-.logo:hover { background: var(--b-red); color: var(--b-bg); }
-
-.desktop-nav { display: flex; height: 100%; flex: 1; }
-.nav-link { 
-  padding: 0 clamp(15px, 2vw, 30px); font-weight: 600;
+  font-weight: 700; 
+  font-size: clamp(1.5rem, 2vw, 2rem); 
+  padding: 0 var(--pad); 
   border-right: var(--border-main);
-  display: flex; align-items: center; justify-content: center;
-  transition: background 0.2s ease, color 0.2s ease;
+  height: 100%; 
+  display: flex; 
+  align-items: center;
+  background: var(--b-ink); 
+  color: var(--b-bg);
+  transition: background 0.3s ease;
+  width: 100%;
 }
-.nav-link:hover { background: var(--b-red); color: var(--b-bg); } 
+.logo:hover { 
+  background: var(--b-red); 
+  color: var(--b-bg); 
+}
+
+.desktop-nav { 
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr); /* 4 menü elemanını kalan alana eşit yayar */
+  height: 100%; 
+  width: 100%;
+}
+
+.nav-link { 
+  padding: 0;
+  font-weight: 600;
+  border-right: var(--border-main);
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease;
+  height: 100%;
+}
+.nav-link:last-child {
+  border-right: none; /* En sağdaki çizgi ekran sınırıyla biter */
+}
+.nav-link:hover { 
+  background: var(--b-red); 
+  color: var(--b-bg); 
+} 
 
 .menu-btn { 
   display: none; 
@@ -70,222 +67,7 @@ a, button { text-decoration: none; color: inherit; outline: none; background: no
   color: var(--b-ink);
   transition: background 0.2s ease, color 0.2s ease;
 }
-.menu-btn:hover { background: var(--b-red); color: var(--b-bg); }
-
-/* --- MOBILE DRAWER --- */
-.mobile-drawer {
-  position: fixed; top: var(--h-height); left: 0; width: 100%;
-  background: var(--b-bg); 
-  border-bottom: var(--border-main);
-  display: flex; flex-direction: column; 
-  transform: translateY(-100%); opacity: 0; pointer-events: none;
-  transition: transform 0.3s ease, opacity 0.3s ease; z-index: 999;
-}
-.mobile-drawer.is-open { transform: translateY(0); opacity: 1; pointer-events: auto; }
-.mobile-drawer .nav-link { 
-  border-right: none; 
-  border-bottom: var(--border-main); 
-  padding: 20px var(--pad); 
-  justify-content: flex-start; 
-}
-.mobile-drawer .nav-link:last-child { border-bottom: none; }
-.mobile-drawer .nav-link:hover { background: var(--b-red); color: var(--b-bg); }
-
-/* --- HERO SECTION --- */
-.hero {
-  margin-top: var(--h-height); 
-  min-height: 45vh; 
-  padding: var(--pad); 
-  display: flex; align-items: flex-end;
-  border-bottom: var(--border-main);
-}
-.hero-title {
-  font-size: clamp(3rem, 8vw, 10rem);
-  font-weight: 700; line-height: 0.85; letter-spacing: -0.05em;
-}
-.hero-title span { 
-  display: block; font-size: clamp(1rem, 1.5vw, 1.8rem); 
-  font-weight: 400; color: var(--b-ink); 
-  margin-bottom: 15px; letter-spacing: 0; 
-}
-
-/* --- GRID SYSTEM & SECTIONS --- */
-.grid-section { 
-  border-bottom: var(--border-main); 
-  display: grid; 
-  grid-template-columns: 35% 65%; 
-  align-items: stretch; 
-}
-
-.section-head { 
-  padding: var(--pad); 
-  border-right: var(--border-main); 
-  display: flex; flex-direction: column; justify-content: center; gap: 20px;
-  height: 100%;
-}
-.title-group { display: flex; flex-direction: column; gap: 5px; }
-.section-num { font-size: 1.2rem; font-weight: 700; color: var(--b-ink); border-bottom: 2px solid var(--b-ink); padding-bottom: 5px; width: max-content; }
-.section-title { font-size: clamp(2rem, 3.5vw, 3.5rem); font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
-.section-desc { font-size: clamp(1.05rem, 1.3vw, 1.2rem); font-weight: 600; line-height: 1.4; }
-
-.section-body { 
-  padding: var(--pad); 
-  height: 100%; 
-  display: flex; flex-direction: column; justify-content: center; 
-}
-
-/* --- TYPOGRAPHY --- */
-.text-body { font-size: clamp(1.1rem, 1.3vw, 1.3rem); display: flex; flex-direction: column; gap: 20px; font-weight: 400; }
-
-/* --- GALLERY CARDS --- */
-.card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; }
-
-.b-card { 
-  border: var(--border-main); padding: 18px; 
-  display: flex; flex-direction: column; gap: 14px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; 
-  background: var(--b-bg); color: var(--b-ink);
-}
-.b-card:hover { 
-  transform: translate(-6px, -6px); 
-  box-shadow: 6px 6px 0px var(--b-ink); 
-  background: var(--b-ink); 
-  color: var(--b-bg);
-}
-
-.card-img { 
-  width: 100%; aspect-ratio: 4/3; 
-  border: var(--border-main); overflow: hidden; 
-  background: var(--b-ink);
-}
-.card-img.square { aspect-ratio: 1/1; }
-.card-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.2); transition: filter 0.3s ease; }
-.b-card:hover .card-img img { filter: grayscale(0%); }
-
-.card-meta { 
-  font-size: 0.9rem; font-weight: 700; 
-  border-bottom: 2.5px solid currentColor; padding-bottom: 6px; 
-  display: flex; justify-content: space-between; 
-}
-.card-title { font-size: clamp(1.4rem, 1.8vw, 2.1rem); font-weight: 700; letter-spacing: -0.5px; line-height: 1.1; }
-.card-desc { font-size: 1rem; line-height: 1.4; }
-
-/* --- FOOTER / CONTACT (MÜKEMMEL HİZALANMIŞ) --- */
-#contact {
-  background-color: var(--b-ink);
-  color: var(--b-bg);
-  padding-bottom: 0;
-}
-
-#contact .section-head {
-  border-right: 2.5px solid var(--b-bg);
-}
-#contact .section-num {
-  color: var(--b-bg);
-  border-bottom-color: var(--b-bg);
-}
-#contact .section-desc {
-  color: rgba(245, 242, 235, 0.7);
-}
-
-.footer-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  gap: 30px;
-}
-
-.footer-main-action {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.footer-action-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 22px;
-  border: 2px solid var(--b-bg);
-  color: var(--b-bg);
-  font-weight: 700;
-  font-size: clamp(1.1rem, 1.4vw, 1.4rem);
-  letter-spacing: -0.5px;
-  transition: all 0.2s ease;
-}
-.footer-action-btn:hover {
-  background-color: var(--b-red);
-  border-color: var(--b-red);
-  color: var(--b-bg);
-  transform: translate(-3px, -3px);
-  box-shadow: 3px 3px 0px var(--b-bg);
-}
-
-.footer-note {
-  font-size: 0.9rem;
-  font-weight: 400;
-  color: rgba(245, 242, 235, 0.5);
-  letter-spacing: 0.5px;
-}
-
-.social-nav { 
-  display: flex; 
-  flex-direction: column; 
-  gap: 8px; 
-  font-weight: 600; 
-  font-size: 1.1rem;
-  text-align: right; 
-}
-.social-nav a { 
+.menu-btn:hover { 
+  background: var(--b-red); 
   color: var(--b-bg); 
-  transition: color 0.2s ease, padding 0.2s ease; 
-}
-.social-nav a:hover { 
-  color: var(--b-red); 
-  padding-right: 10px; 
-}
-
-/* --- DETAIL PAGES --- */
-.detail-hero { margin-top: var(--h-height); padding: var(--pad); border-bottom: var(--border-main); }
-.detail-title { font-size: clamp(3rem, 6vw, 8rem); font-weight: 700; letter-spacing: -0.05em; line-height: 0.9; }
-
-.detail-img { width: 100%; border: var(--border-main); filter: grayscale(100%) contrast(1.2); display: block; }
-.detail-img.portrait { width: 50%; min-width: 220px; aspect-ratio: 3/4; object-fit: cover; }
-
-.detail-meta-list { display: flex; flex-direction: column; gap: 10px; font-weight: 600; font-size: 1rem; margin-top: 30px; }
-.detail-meta-list li { border-bottom: 2.5px solid var(--b-ink); padding-bottom: 6px; display: flex; justify-content: space-between; }
-
-.back-link { font-size: clamp(2rem, 4vw, 4rem); font-weight: 700; letter-spacing: -2px; transition: color 0.2s ease; }
-.back-link:hover { color: var(--b-red); }
-
-/* --- RESPONSIVE / MOBILE --- */
-@media (max-width: 950px) {
-  .desktop-nav { display: none; }
-  .menu-btn { display: flex; align-items: center; justify-content: center; }
-  .grid-section { grid-template-columns: 1fr; align-items: stretch; }
-  .section-head { 
-    border-right: none; 
-    border-bottom: var(--border-main); 
-    flex-direction: column; 
-    gap: 20px; 
-    height: auto; 
-  }
-  .section-body { height: auto; }
-  
-  #contact .section-head { 
-    border-right: none !important;
-    border-bottom: 2.5px solid var(--b-bg) !important; 
-  }
-}
-
-@media (max-width: 650px) {
-  .card-grid { grid-template-columns: 1fr; }
-  .footer-container { 
-    flex-direction: column; 
-    align-items: flex-start; 
-    gap: 30px; 
-  }
-  .social-nav { text-align: left; font-size: 1rem; }
-  .social-nav a:hover { padding-right: 0; padding-left: 8px; }
 }
