@@ -1,5 +1,5 @@
 /* ==========================================
-   ARDIYÉ // PURE BAUHAUS (CONTINUOUS SPINE GRID)
+   ARDIYÉ // PURE BAUHAUS (CLEAN & STABLE)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
@@ -52,8 +52,9 @@ a, button {
   left: 0; 
   width: 100%; 
   height: var(--h-height);
-  display: grid;
-  grid-template-columns: 35% 65%;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
   background: var(--b-bg);
   border-bottom: var(--border-main);
   z-index: 1000;
@@ -61,7 +62,7 @@ a, button {
 
 .logo { 
   font-weight: 700; 
-  font-size: clamp(1.4rem, 1.8vw, 1.9rem); 
+  font-size: clamp(1.4rem, 2vw, 2rem); 
   padding: 0 var(--pad); 
   border-right: var(--border-main);
   height: 100%; 
@@ -70,7 +71,6 @@ a, button {
   background: var(--b-ink); 
   color: var(--b-bg);
   transition: background 0.2s ease;
-  width: 100%;
 }
 .logo:hover { 
   background: var(--b-red); 
@@ -81,13 +81,12 @@ a, button {
   display: flex; 
   align-items: stretch;
   height: 100%; 
-  width: 100%;
 }
 
 .nav-link { 
-  padding: 0 clamp(16px, 2.2vw, 36px);
+  padding: 0 clamp(16px, 2vw, 32px);
   font-weight: 600;
-  border-right: var(--border-main);
+  border-left: var(--border-main);
   display: flex; 
   align-items: center; 
   justify-content: center;
@@ -138,6 +137,7 @@ a, button {
   pointer-events: auto; 
 }
 .mobile-drawer .nav-link { 
+  border-left: none;
   border-right: none; 
   border-bottom: var(--border-main); 
   padding: 20px var(--pad); 
@@ -151,25 +151,14 @@ a, button {
   color: var(--b-bg); 
 }
 
-/* --- HERO SECTION (OMURGAYA ENTEGRE) --- */
+/* --- HERO SECTION --- */
 .hero {
   margin-top: var(--h-height); 
   min-height: 45vh; 
-  display: grid;
-  grid-template-columns: 35% 65%;
+  padding: var(--pad); 
+  display: flex; 
+  align-items: flex-end;
   border-bottom: var(--border-main);
-}
-.hero::before {
-  content: "";
-  display: block;
-  border-right: var(--border-main);
-  height: 100%;
-}
-.hero-content {
-  padding: var(--pad);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
 }
 .hero-title {
   font-size: clamp(3rem, 8vw, 10rem);
@@ -439,15 +428,6 @@ a, button {
 
 /* --- RESPONSIVE / MOBILE --- */
 @media (max-width: 950px) {
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-  }
-  .logo {
-    width: auto;
-    flex: none;
-  }
   .desktop-nav { 
     display: none; 
   }
@@ -455,12 +435,6 @@ a, button {
     display: flex; 
     align-items: center; 
     justify-content: center; 
-  }
-  .hero {
-    display: block;
-  }
-  .hero::before {
-    display: none;
   }
   .grid-section { 
     grid-template-columns: 1fr; 
