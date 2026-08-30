@@ -1,5 +1,5 @@
 /* ==========================================
-   ARDIYÉ // PURE BAUHAUS (COMPLETE & STABLE)
+   ARDIYÉ // PURE BAUHAUS (GRID-ALIGNED & COMPACT UX)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
@@ -45,7 +45,7 @@ a, button {
   cursor: pointer; 
 }
 
-/* --- HEADER & NAVIGATION --- */
+/* --- HEADER & NAVIGATION (01 OMURGASINA KİLİTLİ, ERGONOMİK MENÜ) --- */
 .header {
   position: fixed; 
   top: 0; 
@@ -61,7 +61,7 @@ a, button {
 
 .logo { 
   font-weight: 700; 
-  font-size: clamp(1.5rem, 2vw, 2rem); 
+  font-size: clamp(1.4rem, 1.8vw, 1.9rem); 
   padding: 0 var(--pad); 
   border-right: var(--border-main);
   height: 100%; 
@@ -69,7 +69,7 @@ a, button {
   align-items: center;
   background: var(--b-ink); 
   color: var(--b-bg);
-  transition: background 0.3s ease;
+  transition: background 0.2s ease;
   width: 100%;
 }
 .logo:hover { 
@@ -79,22 +79,20 @@ a, button {
 
 .desktop-nav { 
   display: flex; 
+  align-items: stretch;
   height: 100%; 
   width: 100%;
 }
 
 .nav-link { 
-  flex: 1;
-  height: 100%;
+  padding: 0 clamp(16px, 2.2vw, 36px);
   font-weight: 600;
   border-right: var(--border-main);
   display: flex; 
   align-items: center; 
   justify-content: center;
   transition: background 0.2s ease, color 0.2s ease;
-}
-.nav-link:last-child {
-  border-right: none;
+  height: 100%;
 }
 .nav-link:hover { 
   background: var(--b-red); 
@@ -203,7 +201,7 @@ a, button {
   font-size: 1.2rem; 
   font-weight: 700; 
   color: var(--b-ink); 
-  border-bottom: 2px solid var(--b-ink); 
+  border-bottom: 2.5px solid var(--b-ink); 
   padding-bottom: 5px; 
   width: max-content; 
 }
