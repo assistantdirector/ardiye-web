@@ -1,5 +1,5 @@
 /* ==========================================
-   ARDIYÉ // PURE BAUHAUS (GRID PERFECT ALIGNMENT)
+   ARDIYÉ // PURE BAUHAUS (EXACT 35/65 HEADER ALIGNMENT)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
@@ -45,7 +45,7 @@ a, button {
   cursor: pointer; 
 }
 
-/* --- HEADER & NAVIGATION (TAM 35% / 65% HİZALAMA) --- */
+/* --- HEADER & NAVIGATION (35% LOGO + 65% MENÜ ALANI) --- */
 .header {
   position: fixed; 
   top: 0; 
@@ -53,7 +53,7 @@ a, button {
   width: 100%; 
   height: var(--h-height);
   display: grid;
-  grid-template-columns: 35% 65%; /* Aşağıdaki grid bölümleriyle birebir aynı oran */
+  grid-template-columns: 35% 65%; /* Aşağıdaki grid yapısıyla birebir aynı omurga oranı */
   background: var(--b-bg);
   border-bottom: var(--border-main);
   z-index: 1000;
@@ -79,7 +79,7 @@ a, button {
 
 .desktop-nav { 
   display: grid; 
-  grid-template-columns: repeat(4, 1fr); /* 4 menü elemanını kalan 65% alana eşit yayar, contact tam sınırda biter */
+  grid-template-columns: repeat(4, 1fr); /* 4 menü elemanını (narrative, residents, works, contact) 65% alana eşit yayar */
   height: 100%; 
   width: 100%;
 }
@@ -95,7 +95,7 @@ a, button {
   height: 100%;
 }
 .nav-link:last-child {
-  border-right: none; /* En sağdaki contact çizgisini ekran sınırına kilitler */
+  border-right: none; /* Contact çizgisini tam ekran sınırına kilitler */
 }
 .nav-link:hover { 
   background: var(--b-red); 
