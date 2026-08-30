@@ -1,5 +1,5 @@
 /* ==========================================
-   ARDIYÉ // PURE BAUHAUS (SPLIT HEADER ARCHITECTURE)
+   ARDIYÉ // PURE BAUHAUS (CONTINUOUS SPINE GRID)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
@@ -45,16 +45,15 @@ a, button {
   cursor: pointer; 
 }
 
-/* --- HEADER & NAVIGATION (SPLIT / NO-CONFLICT) --- */
+/* --- HEADER & NAVIGATION --- */
 .header {
   position: fixed; 
   top: 0; 
   left: 0; 
   width: 100%; 
   height: var(--h-height);
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
+  display: grid;
+  grid-template-columns: 35% 65%;
   background: var(--b-bg);
   border-bottom: var(--border-main);
   z-index: 1000;
@@ -62,32 +61,33 @@ a, button {
 
 .logo { 
   font-weight: 700; 
-  font-size: clamp(1.4rem, 2vw, 2rem); 
+  font-size: clamp(1.4rem, 1.8vw, 1.9rem); 
   padding: 0 var(--pad); 
-  border-right: none; /* Çapağı yaratan dikey çizgiyi kaldırdık */
+  border-right: var(--border-main);
   height: 100%; 
   display: flex; 
   align-items: center;
-  background: transparent; 
-  color: var(--b-ink);
-  letter-spacing: -0.5px;
-  transition: color 0.2s ease;
+  background: var(--b-ink); 
+  color: var(--b-bg);
+  transition: background 0.2s ease;
+  width: 100%;
 }
 .logo:hover { 
-  color: var(--b-red); 
+  background: var(--b-red); 
+  color: var(--b-bg); 
 }
 
 .desktop-nav { 
   display: flex; 
   align-items: stretch;
   height: 100%; 
+  width: 100%;
 }
 
 .nav-link { 
-  padding: 0 clamp(16px, 2vw, 32px);
+  padding: 0 clamp(16px, 2.2vw, 36px);
   font-weight: 600;
-  border-left: var(--border-main); /* Butonları soldan çizgilerle birbirine bağlar */
-  border-right: none;
+  border-right: var(--border-main);
   display: flex; 
   align-items: center; 
   justify-content: center;
@@ -138,7 +138,6 @@ a, button {
   pointer-events: auto; 
 }
 .mobile-drawer .nav-link { 
-  border-left: none;
   border-right: none; 
   border-bottom: var(--border-main); 
   padding: 20px var(--pad); 
@@ -152,14 +151,25 @@ a, button {
   color: var(--b-bg); 
 }
 
-/* --- HERO SECTION --- */
+/* --- HERO SECTION (OMURGAYA ENTEGRE) --- */
 .hero {
   margin-top: var(--h-height); 
   min-height: 45vh; 
-  padding: var(--pad); 
-  display: flex; 
-  align-items: flex-end;
+  display: grid;
+  grid-template-columns: 35% 65%;
   border-bottom: var(--border-main);
+}
+.hero::before {
+  content: "";
+  display: block;
+  border-right: var(--border-main);
+  height: 100%;
+}
+.hero-content {
+  padding: var(--pad);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .hero-title {
   font-size: clamp(3rem, 8vw, 10rem);
@@ -376,8 +386,68 @@ a, button {
   padding-right: 10px; 
 }
 
+/* --- DETAIL PAGES --- */
+.detail-hero { 
+  margin-top: var(--h-height); 
+  padding: var(--pad); 
+  border-bottom: var(--border-main); 
+}
+.detail-title { 
+  font-size: clamp(3rem, 6vw, 8rem); 
+  font-weight: 700; 
+  letter-spacing: -0.05em; 
+  line-height: 0.9; 
+}
+
+.detail-img { 
+  width: 100%; 
+  border: var(--border-main); 
+  filter: grayscale(100%) contrast(1.2); 
+  display: block; 
+}
+.detail-img.portrait { 
+  width: 50%; 
+  min-width: 220px; 
+  aspect-ratio: 3/4; 
+  object-fit: cover; 
+}
+
+.detail-meta-list { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 10px; 
+  font-weight: 600; 
+  font-size: 1rem; 
+  margin-top: 30px; 
+}
+.detail-meta-list li { 
+  border-bottom: 2.5px solid var(--b-ink); 
+  padding-bottom: 6px; 
+  display: flex; 
+  justify-content: space-between; 
+}
+
+.back-link { 
+  font-size: clamp(2rem, 4vw, 4rem); 
+  font-weight: 700; 
+  letter-spacing: -2px; 
+  transition: color 0.2s ease; 
+}
+.back-link:hover { 
+  color: var(--b-red); 
+}
+
 /* --- RESPONSIVE / MOBILE --- */
 @media (max-width: 950px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  .logo {
+    width: auto;
+    flex: none;
+  }
   .desktop-nav { 
     display: none; 
   }
@@ -385,6 +455,12 @@ a, button {
     display: flex; 
     align-items: center; 
     justify-content: center; 
+  }
+  .hero {
+    display: block;
+  }
+  .hero::before {
+    display: none;
   }
   .grid-section { 
     grid-template-columns: 1fr; 
