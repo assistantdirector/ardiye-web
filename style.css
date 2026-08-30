@@ -1,5 +1,5 @@
 /* ==========================================
-   ARDIYÉ // PURE BAUHAUS (COMPACT MENU TO GRID ALIGNMENT)
+   ARDIYÉ // PURE BAUHAUS (CONTACT LINE ALIGNMENT)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
@@ -45,7 +45,7 @@ a, button {
   cursor: pointer; 
 }
 
-/* --- HEADER & NAVIGATION --- */
+/* --- HEADER & NAVIGATION (CONTACT ÇİZGİSİNE ENDEKSLİ) --- */
 .header {
   position: fixed; 
   top: 0; 
@@ -53,7 +53,7 @@ a, button {
   width: 100%; 
   height: var(--h-height);
   display: grid;
-  grid-template-columns: 35% 65%; /* 35% logo kutusu, 65% menü bloğu */
+  grid-template-columns: 35% 65%; /* 01 omurgasıyla eşleşen ana grid oranı */
   background: var(--b-bg);
   border-bottom: var(--border-main);
   z-index: 1000;
@@ -63,7 +63,7 @@ a, button {
   font-weight: 700; 
   font-size: clamp(1.5rem, 2vw, 2rem); 
   padding: 0 var(--pad); 
-  border-right: var(--border-main); /* 01 çizgisiyle birebir hizalanan mühür sınırı */
+  border-right: var(--border-main);
   height: 100%; 
   display: flex; 
   align-items: center;
@@ -79,7 +79,7 @@ a, button {
 
 .desktop-nav { 
   display: grid; 
-  grid-template-columns: repeat(4, 1fr); /* 4 menü elemanını 65%'lik alan içine eşit olarak sınırlar */
+  grid-template-columns: repeat(4, 1fr); /* narrative, residents, works ve contact butonlarını 65%'lik alana tam oturtur */
   height: 100%; 
   width: 100%;
 }
@@ -87,7 +87,7 @@ a, button {
 .nav-link { 
   padding: 0; 
   font-weight: 600;
-  border-right: var(--border-main);
+  border-right: var(--border-main); /* Contact dahil tüm butonları eşit aralıklarla çizgiye kadar uzatır */
   display: flex; 
   align-items: center; 
   justify-content: center;
@@ -95,7 +95,7 @@ a, button {
   height: 100%;
 }
 .nav-link:last-child {
-  border-right: none; /* Contact çizgisini sağ sınıra kilitler */
+  border-right: var(--border-main); /* Contact'ın sağ çizgisi tam olarak 01 omurga çizgisiyle birleşir */
 }
 .nav-link:hover { 
   background: var(--b-red); 
