@@ -1,5 +1,5 @@
 /* ==========================================
-   ARDIYÉ // PURE BAUHAUS (EXACT 35/65 ALIGNMENT)
+   ARDIYÉ // PURE BAUHAUS (COMPACT MENU TO GRID ALIGNMENT)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
@@ -45,7 +45,7 @@ a, button {
   cursor: pointer; 
 }
 
-/* --- HEADER & NAVIGATION (01 ÇİZGİSİNE TAM KİLİTLİ) --- */
+/* --- HEADER & NAVIGATION --- */
 .header {
   position: fixed; 
   top: 0; 
@@ -53,7 +53,7 @@ a, button {
   width: 100%; 
   height: var(--h-height);
   display: grid;
-  grid-template-columns: 35% 65%; /* Aşağıdaki 01 omurgasıyla birebir aynı oran */
+  grid-template-columns: 35% 65%; /* 35% logo kutusu, 65% menü bloğu */
   background: var(--b-bg);
   border-bottom: var(--border-main);
   z-index: 1000;
@@ -63,7 +63,7 @@ a, button {
   font-weight: 700; 
   font-size: clamp(1.5rem, 2vw, 2rem); 
   padding: 0 var(--pad); 
-  border-right: var(--border-main); /* Logonun bittiği çizgi, aşağıdan inen 01 sütun çizgisiyle tam üst üste biner */
+  border-right: var(--border-main); /* 01 çizgisiyle birebir hizalanan mühür sınırı */
   height: 100%; 
   display: flex; 
   align-items: center;
@@ -79,7 +79,7 @@ a, button {
 
 .desktop-nav { 
   display: grid; 
-  grid-template-columns: repeat(4, 1fr); /* 4 menü elemanını (narrative, residents, works, contact) kalan 65% alana eşit yayar */
+  grid-template-columns: repeat(4, 1fr); /* 4 menü elemanını 65%'lik alan içine eşit olarak sınırlar */
   height: 100%; 
   width: 100%;
 }
@@ -95,7 +95,7 @@ a, button {
   height: 100%;
 }
 .nav-link:last-child {
-  border-right: none;
+  border-right: none; /* Contact çizgisini sağ sınıra kilitler */
 }
 .nav-link:hover { 
   background: var(--b-red); 
