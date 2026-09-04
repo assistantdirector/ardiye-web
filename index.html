@@ -8,7 +8,6 @@
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="header">
     <a href="index.html" class="logo">ardiyé</a>
     <nav class="desktop-nav">
@@ -16,16 +15,14 @@
       <a href="#residents" class="nav-link">residents</a>
       <a href="#works" class="nav-link">works</a>
       <a href="#contact" class="nav-link">contact</a>
+
+      <div class="scroll-metric-track">
+        <div class="scroll-metric-bar" id="scrollBar"></div>
+      </div>
     </nav>
     <button class="menu-btn" id="menuToggle" aria-label="Toggle Navigation">[ menu ]</button>
   </header>
 
-  <!-- SCROLL METRIC BAR -->
-  <div class="scroll-metric-track">
-    <div class="scroll-metric-bar" id="scrollBar"></div>
-  </div>
-
-  <!-- MOBILE DRAWER -->
   <div class="mobile-drawer" id="mobileDrawer">
     <a href="#narrative" class="nav-link">narrative</a>
     <a href="#residents" class="nav-link">residents</a>
@@ -33,7 +30,6 @@
     <a href="#contact" class="nav-link">contact</a>
   </div>
 
-  <!-- HERO SECTION -->
   <header class="hero">
     <h1 class="hero-title">
       <span>collective art space</span>
@@ -42,7 +38,6 @@
   </header>
 
   <main>
-    <!-- 01 NARRATIVE -->
     <section class="grid-section" id="narrative">
       <div class="section-head">
         <div class="title-group">
@@ -59,7 +54,6 @@
       </div>
     </section>
 
-    <!-- 02 RESIDENTS -->
     <section class="grid-section" id="residents">
       <div class="section-head">
         <div class="title-group">
@@ -97,7 +91,6 @@
       </div>
     </section>
 
-    <!-- 03 WORKS -->
     <section class="grid-section" id="works">
       <div class="section-head">
         <div class="title-group">
@@ -135,7 +128,6 @@
       </div>
     </section>
 
-    <!-- 04 CONTACT / FOOTER -->
     <footer class="grid-section" id="contact">
       <div class="section-head">
         <div class="title-group">
@@ -163,7 +155,7 @@
   </main>
 
   <script>
-    // Mobile Drawer Logic
+    // Mobil Drawer Yönetimi
     const menuBtn = document.getElementById('menuToggle');
     const mobileDrawer = document.getElementById('mobileDrawer');
     const drawerLinks = mobileDrawer.querySelectorAll('.nav-link');
@@ -180,30 +172,35 @@
       });
     });
 
-    // Scroll Metric & Menu Synchronization (Scrollspy) Logic
+    // Menü Başlıklarına ve Bölümlere Tam Kilitli Scrollspy & Metrik Mantığı
     const sections = document.querySelectorAll('section[id], footer[id]');
     const navLinks = document.querySelectorAll('.desktop-nav .nav-link, .mobile-drawer .nav-link');
+    const scrollBar = document.getElementById('scrollBar');
+
+    const sectionIndexMap = {
+      'narrative': 0,
+      'residents': 1,
+      'works': 2,
+      'contact': 3
+    };
 
     window.addEventListener('scroll', () => {
-      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      
-      // Update Scroll Metric Bar
-      const scrollBar = document.getElementById('scrollBar');
-      if (scrollBar) {
-        scrollBar.style.width = scrolled + '%';
+      let currentSection = '';
+      const offsetMargin = 140;
+
+      // Sayfa tabanına yaklaşıldığında contact bölümüne kilitle
+      if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 25) {
+        currentSection = 'contact';
+      } else {
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - offsetMargin;
+          if (window.pageYOffset >= sectionTop) {
+            currentSection = section.getAttribute('id');
+          }
+        });
       }
 
-      // Update Active Menu Links Based on Scroll Position
-      let currentSection = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 120; // Header yüksekliği ve pay payı
-        if (window.pageYOffset >= sectionTop) {
-          currentSection = section.getAttribute('id');
-        }
-      });
-
+      // Menü metinlerinin aktif (kırmızı) sınıfını güncelle
       navLinks.forEach(link => {
         link.classList.remove('is-active');
         const hrefAttr = link.getAttribute('href');
@@ -211,6 +208,17 @@
           link.classList.add('is-active');
         }
       });
+
+      // Kırmızı gösterge barını ilgili menü kutusunun altına (%25 adımlarla) tam kaydır
+      if (scrollBar) {
+        if (currentSection && sectionIndexMap[currentSection] !== undefined) {
+          const index = sectionIndexMap[currentSection];
+          scrollBar.style.transform = `translateX(${index * 100}%)`;
+        } else {
+          // Hero alanındayken çubuk gizlenir
+          scrollBar.style.transform = 'translateX(-100%)';
+        }
+      }
     });
   </script>
 </body>
