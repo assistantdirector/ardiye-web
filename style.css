@@ -1,5 +1,5 @@
 /* ==========================================
-   ARDIYÉ // PURE BAUHAUS (ORIGINAL STABLE)
+   ARDIYÉ // PURE BAUHAUS (MICRO-PARALLAX)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
@@ -91,7 +91,7 @@ a, button {
   display: flex; 
   align-items: center; 
   justify-content: center;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease-out;
   height: 100%;
 }
 .nav-link:last-child {
@@ -154,7 +154,7 @@ a, button {
   color: var(--b-bg); 
 }
 
-/* --- HERO SECTION --- */
+/* --- HERO SECTION (PARALLAX ENABLED) --- */
 .hero {
   margin-top: var(--h-height); 
   min-height: 45vh; 
@@ -162,12 +162,14 @@ a, button {
   display: flex; 
   align-items: flex-end;
   border-bottom: var(--border-main);
+  overflow: hidden;
 }
 .hero-title {
   font-size: clamp(3rem, 8vw, 10rem);
   font-weight: 700; 
   line-height: 0.85; 
   letter-spacing: -0.05em;
+  will-change: transform;
 }
 .hero-title span { 
   display: block; 
@@ -237,12 +239,13 @@ a, button {
   font-weight: 400; 
 }
 
-/* --- GALLERY CARDS --- */
+/* --- GALLERY CARDS (PARALLAX + MAGNETIC) --- */
 .card-grid { 
   display: grid; 
   grid-template-columns: 1fr 1fr; 
   gap: 20px; 
   width: 100%; 
+  perspective: 1000px;
 }
 
 .b-card { 
@@ -251,12 +254,13 @@ a, button {
   display: flex; 
   flex-direction: column; 
   gap: 14px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; 
+  transition: transform 0.25s ease-out, box-shadow 0.2s ease, background 0.2s ease; 
   background: var(--b-bg); 
   color: var(--b-ink);
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 .b-card:hover { 
-  transform: translate(-6px, -6px); 
   box-shadow: 6px 6px 0px var(--b-ink); 
   background: var(--b-ink); 
   color: var(--b-bg);
@@ -268,6 +272,7 @@ a, button {
   border: var(--border-main); 
   overflow: hidden; 
   background: var(--b-ink);
+  position: relative;
 }
 .card-img.square { 
   aspect-ratio: 1/1; 
@@ -277,7 +282,9 @@ a, button {
   height: 100%; 
   object-fit: cover; 
   filter: grayscale(100%) contrast(1.2); 
-  transition: filter 0.3s ease; 
+  transition: filter 0.3s ease, transform 0.1s linear; 
+  transform: scale(1.08); /* Kayma payı */
+  will-change: transform;
 }
 .b-card:hover .card-img img { 
   filter: grayscale(0%); 
