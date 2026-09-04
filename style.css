@@ -1,5 +1,5 @@
 /* ==========================================
-   ARDIYÉ // PURE BAUHAUS (PURE CLICK SYNC)
+   ARDIYÉ // PURE BAUHAUS (INSTANT LOGO HOVER)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
@@ -22,7 +22,7 @@
 
 html { 
   scroll-behavior: smooth; 
-  scroll-padding-top: var(--h-height); /* Tıklamada sabit header'ın bölüm başlığını kapatmasını engeller */
+  scroll-padding-top: var(--h-height);
   background: var(--b-bg); 
 }
 
@@ -70,11 +70,13 @@ a, button {
   align-items: center;
   background: var(--b-ink); 
   color: var(--b-bg);
-  transition: background 0.3s ease;
   width: 100%;
+  transition: background-color 0.1s ease, color 0.1s ease; /* Anında tepki veren hızlı geçiş */
 }
+
+/* Sadece mouse üzerindeyken anında kırmızı hover */
 .logo:hover { 
-  background: var(--b-red); 
+  background-color: var(--b-red); 
   color: var(--b-bg); 
 }
 
