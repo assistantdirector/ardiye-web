@@ -180,15 +180,37 @@
       });
     });
 
-    // Scroll Metric Logic
+    // Scroll Metric & Menu Synchronization (Scrollspy) Logic
+    const sections = document.querySelectorAll('section[id], footer[id]');
+    const navLinks = document.querySelectorAll('.desktop-nav .nav-link, .mobile-drawer .nav-link');
+
     window.addEventListener('scroll', () => {
       const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       const scrolled = (winScroll / height) * 100;
+      
+      // Update Scroll Metric Bar
       const scrollBar = document.getElementById('scrollBar');
       if (scrollBar) {
         scrollBar.style.width = scrolled + '%';
       }
+
+      // Update Active Menu Links Based on Scroll Position
+      let currentSection = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120; // Header yüksekliği ve pay payı
+        if (window.pageYOffset >= sectionTop) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('is-active');
+        const hrefAttr = link.getAttribute('href');
+        if (hrefAttr === `#${currentSection}` || hrefAttr.endsWith(`#${currentSection}`)) {
+          link.classList.add('is-active');
+        }
+      });
     });
   </script>
 </body>
