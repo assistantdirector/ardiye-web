@@ -1,5 +1,5 @@
 /* ==========================================
-   ARDIYÉ // PURE BAUHAUS (BUG-FREE SCROLLSPY)
+   ARDIYÉ // PURE BAUHAUS (CLICK-SYNC ONLY)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
@@ -92,13 +92,17 @@ a, button {
   display: flex; 
   align-items: center; 
   justify-content: center;
-  transition: background 0.2s ease, color 0.2s ease;
   height: 100%;
+  background: var(--b-bg);
+  color: var(--b-ink);
+  transition: background 0.2s ease, color 0.2s ease;
 }
 .nav-link:last-child {
   border-right: var(--border-main);
 }
-.nav-link:hover, .nav-link.is-active { 
+
+/* Hover kaldırıldı; sadece tıklandığında / senkronken aktif renk devrede */
+.nav-link.is-active { 
   background: var(--b-red); 
   color: var(--b-bg); 
 } 
@@ -150,7 +154,7 @@ a, button {
 .mobile-drawer .nav-link:last-child { 
   border-bottom: none; 
 }
-.mobile-drawer .nav-link:hover, .mobile-drawer .nav-link.is-active { 
+.mobile-drawer .nav-link.is-active { 
   background: var(--b-red); 
   color: var(--b-bg); 
 }
@@ -240,7 +244,7 @@ a, button {
   font-weight: 400; 
 }
 
-/* --- GALLERY CARDS (AXIS-LOCKED SHIFT) --- */
+/* --- GALLERY CARDS --- */
 .card-grid { 
   display: grid; 
   grid-template-columns: 1fr 1fr; 
