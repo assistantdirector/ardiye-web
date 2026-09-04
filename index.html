@@ -20,6 +20,11 @@
     <button class="menu-btn" id="menuToggle" aria-label="Toggle Navigation">[ menu ]</button>
   </header>
 
+  <!-- SCROLL METRIC BAR -->
+  <div class="scroll-metric-track">
+    <div class="scroll-metric-bar" id="scrollBar"></div>
+  </div>
+
   <!-- MOBILE DRAWER -->
   <div class="mobile-drawer" id="mobileDrawer">
     <a href="#narrative" class="nav-link">narrative</a>
@@ -158,6 +163,7 @@
   </main>
 
   <script>
+    // Mobile Drawer Logic
     const menuBtn = document.getElementById('menuToggle');
     const mobileDrawer = document.getElementById('mobileDrawer');
     const drawerLinks = mobileDrawer.querySelectorAll('.nav-link');
@@ -172,6 +178,17 @@
         mobileDrawer.classList.remove('is-open');
         menuBtn.textContent = '[ menu ]';
       });
+    });
+
+    // Scroll Metric Logic
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const scrollBar = document.getElementById('scrollBar');
+      if (scrollBar) {
+        scrollBar.style.width = scrolled + '%';
+      }
     });
   </script>
 </body>
