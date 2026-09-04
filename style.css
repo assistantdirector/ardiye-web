@@ -1,5 +1,5 @@
 /* ==========================================
-   ARDIYÉ // PURE BAUHAUS (WITH SCROLL METRIC)
+   ARDIYÉ // PURE BAUHAUS (SYNCED MENU & SCROLL)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
@@ -22,6 +22,7 @@
 
 html { 
   scroll-behavior: smooth; 
+  scroll-padding-top: var(--h-height); /* Sabit header'ın başlıklara oturmasını engeller, tam hizalar */
   background: var(--b-bg); 
 }
 
@@ -116,7 +117,7 @@ a, button {
 .nav-link:last-child {
   border-right: var(--border-main);
 }
-.nav-link:hover { 
+.nav-link:hover, .nav-link.is-active { 
   background: var(--b-red); 
   color: var(--b-bg); 
 } 
@@ -168,7 +169,7 @@ a, button {
 .mobile-drawer .nav-link:last-child { 
   border-bottom: none; 
 }
-.mobile-drawer .nav-link:hover { 
+.mobile-drawer .nav-link:hover, .mobile-drawer .nav-link.is-active { 
   background: var(--b-red); 
   color: var(--b-bg); 
 }
