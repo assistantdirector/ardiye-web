@@ -1,5 +1,5 @@
 /* ==========================================
-   ARDIYÉ // PURE BAUHAUS (AXIS-LOCKED PARALLAX)
+   ARDIYÉ // PURE BAUHAUS (SYNCED + AXIS-PARALLAX)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
@@ -22,6 +22,7 @@
 
 html { 
   scroll-behavior: smooth; 
+  scroll-padding-top: var(--h-height); /* Tıklamalarda header'ın başlık üstüne binmesini engeller */
   background: var(--b-bg); 
 }
 
@@ -97,7 +98,7 @@ a, button {
 .nav-link:last-child {
   border-right: var(--border-main);
 }
-.nav-link:hover { 
+.nav-link:hover, .nav-link.is-active { 
   background: var(--b-red); 
   color: var(--b-bg); 
 } 
@@ -149,7 +150,7 @@ a, button {
 .mobile-drawer .nav-link:last-child { 
   border-bottom: none; 
 }
-.mobile-drawer .nav-link:hover { 
+.mobile-drawer .nav-link:hover, .mobile-drawer .nav-link.is-active { 
   background: var(--b-red); 
   color: var(--b-bg); 
 }
