@@ -175,21 +175,33 @@
       });
     });
 
-    // 1. Dikey Scroll Paralaksı & Kararlı Scrollspy Senkronizasyonu
+    // 1. Dikey Scroll Paralaksı & Menü Senkronizasyonu
     const heroTitle = document.getElementById('heroTitle');
     const parallaxImgs = document.querySelectorAll('.parallax-img');
     const sections = document.querySelectorAll('section[id], footer[id]');
     const navLinks = document.querySelectorAll('.desktop-nav .nav-link, .mobile-drawer .nav-link');
 
+    // Menü bağlantısına tıklandığında anında senkronize et
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const targetId = link.getAttribute('href').replace('#', '');
+        const targetSection = document.getElementById(targetId);
+        
+        if (targetSection) {
+          navLinks.forEach(item => item.classList.remove('is-active'));
+          link.classList.add('is-active');
+        }
+      });
+    });
+
+    // Sayfa kaydırıldıkça sadece ilgili bölüm ekrandayken senkron kalması
     window.addEventListener('scroll', () => {
       const scrolled = window.pageYOffset;
 
-      // Hero başlığı hafif dikey akış
       if (heroTitle && scrolled < window.innerHeight) {
         heroTitle.style.transform = `translateY(${scrolled * 0.16}px)`;
       }
 
-      // Kart görselleri çerçeve içi dikey kayma
       parallaxImgs.forEach(img => {
         const rect = img.parentElement.getBoundingClientRect();
         if (rect.top < window.innerHeight && rect.bottom > 0) {
@@ -198,18 +210,17 @@
         }
       });
 
-      // Hatasız Scrollspy: Ekran merkez çizgisine hangi bölümün denk geldiğini ölçer
+      // Hassas odak ölçümü (Viewport Center hattı)
       let activeSectionId = '';
-      const viewportCenter = window.innerHeight * 0.45;
+      const focusLine = window.innerHeight * 0.45;
 
       sections.forEach(section => {
         const rect = section.getBoundingClientRect();
-        if (rect.top <= viewportCenter && rect.bottom >= viewportCenter) {
+        if (rect.top <= focusLine && rect.bottom >= focusLine) {
           activeSectionId = section.getAttribute('id');
         }
       });
 
-      // Menü linklerini senkronize et
       navLinks.forEach(link => {
         link.classList.remove('is-active');
         const hrefAttr = link.getAttribute('href');
@@ -219,7 +230,7 @@
       });
     }, { passive: true });
 
-    // 2. Saf X & Y Eksenine Kilitli 2D Manyetik Hover
+    // 2. Saf X & Y Manyetik Hover
     if (window.matchMedia('(hover: hover)').matches) {
       const cards = document.querySelectorAll('.b-card');
 
