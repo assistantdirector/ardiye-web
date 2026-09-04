@@ -1,5 +1,5 @@
 /* ==========================================
-   ARDIYÉ // PURE BAUHAUS (SYNCED + AXIS-PARALLAX)
+   ARDIYÉ // PURE BAUHAUS (BUG-FREE SCROLLSPY)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
@@ -22,7 +22,7 @@
 
 html { 
   scroll-behavior: smooth; 
-  scroll-padding-top: var(--h-height); /* Tıklamalarda header'ın başlık üstüne binmesini engeller */
+  scroll-padding-top: var(--h-height);
   background: var(--b-bg); 
 }
 
