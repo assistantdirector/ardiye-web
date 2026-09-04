@@ -8,7 +8,6 @@
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="header">
     <a href="index.html" class="logo">ardiyé</a>
     <nav class="desktop-nav">
@@ -20,7 +19,6 @@
     <button class="menu-btn" id="menuToggle" aria-label="Toggle Navigation">[ menu ]</button>
   </header>
 
-  <!-- MOBILE DRAWER -->
   <div class="mobile-drawer" id="mobileDrawer">
     <a href="#narrative" class="nav-link">narrative</a>
     <a href="#residents" class="nav-link">residents</a>
@@ -28,16 +26,14 @@
     <a href="#contact" class="nav-link">contact</a>
   </div>
 
-  <!-- HERO SECTION -->
   <header class="hero">
-    <h1 class="hero-title">
+    <h1 class="hero-title" id="heroTitle">
       <span>collective art space</span>
       raw flux.
     </h1>
   </header>
 
   <main>
-    <!-- 01 NARRATIVE -->
     <section class="grid-section" id="narrative">
       <div class="section-head">
         <div class="title-group">
@@ -54,7 +50,6 @@
       </div>
     </section>
 
-    <!-- 02 RESIDENTS -->
     <section class="grid-section" id="residents">
       <div class="section-head">
         <div class="title-group">
@@ -67,7 +62,7 @@
         <div class="card-grid">
           <a href="artist-nazim.html" class="b-card">
             <div class="card-img square">
-              <img src="images/nazim-portrait.jpg" alt="nazım kahramantürk">
+              <img src="images/nazim-portrait.jpg" alt="nazım kahramantürk" class="parallax-img">
             </div>
             <div class="card-meta">
               <span>resident // 01</span>
@@ -79,7 +74,7 @@
 
           <a href="artist-necef.html" class="b-card">
             <div class="card-img square">
-              <img src="images/necef-portrait.jpg" alt="necef mengüverdi">
+              <img src="images/necef-portrait.jpg" alt="necef mengüverdi" class="parallax-img">
             </div>
             <div class="card-meta">
               <span>resident // 02</span>
@@ -92,7 +87,6 @@
       </div>
     </section>
 
-    <!-- 03 WORKS -->
     <section class="grid-section" id="works">
       <div class="section-head">
         <div class="title-group">
@@ -105,7 +99,7 @@
         <div class="card-grid">
           <a href="project-ambient.html" class="b-card">
             <div class="card-img">
-              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="ambient archive">
+              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="ambient archive" class="parallax-img">
             </div>
             <div class="card-meta">
               <span>work // 001</span>
@@ -117,7 +111,7 @@
 
           <a href="project-novaqua.html" class="b-card">
             <div class="card-img">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="novaqua project">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="novaqua project" class="parallax-img">
             </div>
             <div class="card-meta">
               <span>work // 002</span>
@@ -130,7 +124,6 @@
       </div>
     </section>
 
-    <!-- 04 CONTACT / FOOTER -->
     <footer class="grid-section" id="contact">
       <div class="section-head">
         <div class="title-group">
@@ -158,6 +151,7 @@
   </main>
 
   <script>
+    // Mobil Çekmece Yönetimi
     const menuBtn = document.getElementById('menuToggle');
     const mobileDrawer = document.getElementById('mobileDrawer');
     const drawerLinks = mobileDrawer.querySelectorAll('.nav-link');
@@ -173,6 +167,49 @@
         menuBtn.textContent = '[ menu ]';
       });
     });
+
+    // Minimal Scroll Paralaks
+    const heroTitle = document.getElementById('heroTitle');
+    const parallaxImgs = document.querySelectorAll('.parallax-img');
+
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+
+      // Hero başlığında hafif ve tok bir kayma
+      if (heroTitle && scrolled < window.innerHeight) {
+        heroTitle.style.transform = `translateY(${scrolled * 0.18}px)`;
+      }
+
+      // Kart içi görsellerde çerçevenin dışına taşmayan dikey mikro kayma
+      parallaxImgs.forEach(img => {
+        const rect = img.parentElement.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          const shift = (rect.top - window.innerHeight / 2) * 0.05;
+          img.style.transform = `scale(1.08) translateY(${shift}px)`;
+        }
+      });
+    }, { passive: true });
+
+    // Masaüstünde Kartlara Mikro Manyetik Açı (3D Tilt)
+    if (window.matchMedia('(hover: hover)').matches) {
+      const cards = document.querySelectorAll('.b-card');
+
+      cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const rotateX = ((y / rect.height) - 0.5) * -7;
+          const rotateY = ((x / rect.width) - 0.5) * 7;
+
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translate(-4px, -4px)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translate(0px, 0px)';
+        });
+      });
+    }
   </script>
 </body>
 </html>
