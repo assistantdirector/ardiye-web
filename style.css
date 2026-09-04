@@ -1,5 +1,5 @@
 /* ==========================================
-   ARDIYÉ // PURE BAUHAUS (CLICK-SYNC ONLY)
+   ARDIYÉ // PURE BAUHAUS (PURE CLICK SYNC)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
@@ -22,7 +22,7 @@
 
 html { 
   scroll-behavior: smooth; 
-  scroll-padding-top: var(--h-height);
+  scroll-padding-top: var(--h-height); /* Tıklamada sabit header'ın bölüm başlığını kapatmasını engeller */
   background: var(--b-bg); 
 }
 
@@ -95,17 +95,10 @@ a, button {
   height: 100%;
   background: var(--b-bg);
   color: var(--b-ink);
-  transition: background 0.2s ease, color 0.2s ease;
 }
 .nav-link:last-child {
   border-right: var(--border-main);
 }
-
-/* Hover kaldırıldı; sadece tıklandığında / senkronken aktif renk devrede */
-.nav-link.is-active { 
-  background: var(--b-red); 
-  color: var(--b-bg); 
-} 
 
 .menu-btn { 
   display: none; 
@@ -153,10 +146,6 @@ a, button {
 }
 .mobile-drawer .nav-link:last-child { 
   border-bottom: none; 
-}
-.mobile-drawer .nav-link.is-active { 
-  background: var(--b-red); 
-  color: var(--b-bg); 
 }
 
 /* --- HERO SECTION --- */
