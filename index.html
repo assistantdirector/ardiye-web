@@ -158,7 +158,7 @@
   </main>
 
   <script>
-    // Mobil Çekmece Yönetimi
+    // Mobil Menü Çekmecesi
     const menuBtn = document.getElementById('menuToggle');
     const mobileDrawer = document.getElementById('mobileDrawer');
     const drawerLinks = mobileDrawer.querySelectorAll('.nav-link');
@@ -175,7 +175,7 @@
       });
     });
 
-    // 1. Dikey (Vertical - Y Eksenli) Scroll Paralaksı & Menü Senkronizasyonu (Scrollspy)
+    // 1. Dikey Scroll Paralaksı & Kararlı Scrollspy Senkronizasyonu
     const heroTitle = document.getElementById('heroTitle');
     const parallaxImgs = document.querySelectorAll('.parallax-img');
     const sections = document.querySelectorAll('section[id], footer[id]');
@@ -184,12 +184,12 @@
     window.addEventListener('scroll', () => {
       const scrolled = window.pageYOffset;
 
-      // Hero başlığında sadece saf Y ekseni kayması
+      // Hero başlığı hafif dikey akış
       if (heroTitle && scrolled < window.innerHeight) {
         heroTitle.style.transform = `translateY(${scrolled * 0.16}px)`;
       }
 
-      // Kart görsellerinde çerçevenin içinde sadece saf Y ekseni kayması
+      // Kart görselleri çerçeve içi dikey kayma
       parallaxImgs.forEach(img => {
         const rect = img.parentElement.getBoundingClientRect();
         if (rect.top < window.innerHeight && rect.bottom > 0) {
@@ -198,27 +198,22 @@
         }
       });
 
-      // Menü Başlıkları Senkronizasyonu (Scrollspy)
-      let currentSection = '';
-      const headerOffset = 120;
+      // Hatasız Scrollspy: Ekran merkez çizgisine hangi bölümün denk geldiğini ölçer
+      let activeSectionId = '';
+      const viewportCenter = window.innerHeight * 0.45;
 
-      // Sayfa en aşağıya ulaştığında doğrudan contact'ı yakala
-      if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 25) {
-        currentSection = 'contact';
-      } else {
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop - headerOffset;
-          if (scrolled >= sectionTop) {
-            currentSection = section.getAttribute('id');
-          }
-        });
-      }
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= viewportCenter && rect.bottom >= viewportCenter) {
+          activeSectionId = section.getAttribute('id');
+        }
+      });
 
-      // İlgili menü başlığına aktif sınıfını ekle
+      // Menü linklerini senkronize et
       navLinks.forEach(link => {
         link.classList.remove('is-active');
         const hrefAttr = link.getAttribute('href');
-        if (hrefAttr === `#${currentSection}` || hrefAttr.endsWith(`#${currentSection}`)) {
+        if (activeSectionId && (hrefAttr === `#${activeSectionId}` || hrefAttr.endsWith(`#${activeSectionId}`))) {
           link.classList.add('is-active');
         }
       });
