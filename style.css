@@ -1,5 +1,5 @@
 /* ==========================================
-   ARDIYÉ // PURE BAUHAUS (INSTANT MOUSE HOVER)
+   ARDIYÉ // PURE BAUHAUS (ALL RED HOVERS)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
@@ -73,8 +73,6 @@ a, button {
   width: 100%;
   transition: background-color 0.1s ease, color 0.1s ease;
 }
-
-/* Sadece mouse üzerindeyken anında kırmızı hover */
 .logo:hover { 
   background-color: var(--b-red); 
   color: var(--b-bg); 
@@ -102,8 +100,6 @@ a, button {
 .nav-link:last-child {
   border-right: var(--border-main);
 }
-
-/* Tıpkı logo gibi: Sadece mouse üzerindeyken anında kırmızı hover, çekilince hemen normale döner */
 .nav-link:hover { 
   background-color: var(--b-red); 
   color: var(--b-bg); 
@@ -246,7 +242,7 @@ a, button {
   font-weight: 400; 
 }
 
-/* --- GALLERY CARDS --- */
+/* --- GALLERY CARDS (ALL RED HOVER) --- */
 .card-grid { 
   display: grid; 
   grid-template-columns: 1fr 1fr; 
@@ -260,15 +256,15 @@ a, button {
   display: flex; 
   flex-direction: column; 
   gap: 14px;
-  transition: transform 0.15s ease-out, box-shadow 0.2s ease, background 0.2s ease; 
+  transition: transform 0.15s ease-out, box-shadow 0.2s ease, background 0.15s ease, color 0.15s ease; 
   background: var(--b-bg); 
   color: var(--b-ink);
   will-change: transform;
 }
 .b-card:hover { 
   box-shadow: 6px 6px 0px var(--b-ink); 
-  background: var(--b-ink); 
-  color: var(--b-bg);
+  background: var(--b-red); /* Kırmızı hover arka planı */
+  color: var(--b-bg);         /* Yazılar zemin beji rengine döner */
 }
 
 .card-img { 
