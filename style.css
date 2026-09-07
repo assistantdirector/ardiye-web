@@ -1,5 +1,5 @@
 /* ==========================================
-   ARDIYÉ // PURE BAUHAUS (NEGATIVE LOGO INTERACTION)
+   ARDIYÉ // PURE BAUHAUS (DEFAULT BLACK / HOVER NEGATIVE)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
@@ -60,7 +60,7 @@ a, button {
   z-index: 1000;
 }
 
-/* Logo: Varsayılan olarak negatif (bej zemin, siyah metin), hover ile siyaha invert */
+/* Logo: Varsayılan siyah zemin / bej yazı; Hover olunca negatifi (bej zemin / siyah yazı) */
 .logo { 
   font-weight: 700; 
   font-size: clamp(1.5rem, 2vw, 2rem); 
@@ -69,14 +69,14 @@ a, button {
   height: 100%; 
   display: flex; 
   align-items: center;
-  background-color: var(--b-bg); 
-  color: var(--b-ink);
+  background-color: var(--b-ink); 
+  color: var(--b-bg);
   width: 100%;
   transition: background-color 0.1s ease, color 0.1s ease;
 }
 .logo:hover { 
-  background-color: var(--b-ink); 
-  color: var(--b-bg); 
+  background-color: var(--b-bg); 
+  color: var(--b-ink); 
 }
 
 .desktop-nav { 
