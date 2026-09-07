@@ -30,7 +30,7 @@
 
   <!-- HERO SECTION -->
   <header class="hero">
-    <h1 class="hero-title" id="heroTitle">
+    <h1 class="hero-title">
       <span>collective art space</span>
       raw flux.
     </h1>
@@ -192,17 +192,10 @@
       });
     });
 
-    // 1. Dikey Scroll Paralaksı (Hero Başlığı ve Görsel Derinliği)
-    const heroTitle = document.getElementById('heroTitle');
+    // 1. Dikey Scroll Paralaksı (SADECE Kart Görselleri İçin Çerçeve İçi Mikro Derinlik)
     const parallaxImgs = document.querySelectorAll('.parallax-img');
 
     window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-
-      if (heroTitle && scrolled < window.innerHeight) {
-        heroTitle.style.transform = `translateY(${scrolled * 0.16}px)`;
-      }
-
       parallaxImgs.forEach(img => {
         const rect = img.parentElement.getBoundingClientRect();
         if (rect.top < window.innerHeight && rect.bottom > 0) {
