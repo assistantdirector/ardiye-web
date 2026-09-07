@@ -1,5 +1,5 @@
 /* ==========================================
-   ARDIYÉ // PURE BAUHAUS (RED TEXT HOVER LOGO)
+   ARDIYÉ // PURE BAUHAUS (FIXED HERO TITLE)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
@@ -167,14 +167,12 @@ a, button {
   display: flex; 
   align-items: flex-end;
   border-bottom: var(--border-main);
-  overflow: hidden;
 }
 .hero-title {
   font-size: clamp(3rem, 8vw, 10rem);
   font-weight: 700; 
   line-height: 0.85; 
   letter-spacing: -0.05em;
-  will-change: transform;
 }
 .hero-title span { 
   display: block; 
