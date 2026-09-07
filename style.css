@@ -1,5 +1,5 @@
 /* ==========================================
-   ARDIYÉ // PURE BAUHAUS (DEFAULT BLACK / HOVER NEGATIVE)
+   ARDIYÉ // PURE BAUHAUS (BRUTALIST LOGO HOVER)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
@@ -60,7 +60,7 @@ a, button {
   z-index: 1000;
 }
 
-/* Logo: Varsayılan siyah zemin / bej yazı; Hover olunca negatifi (bej zemin / siyah yazı) */
+/* Logo: Siyah monolitik blok kalır; hover'da teknik parantezler [ ardiyé ] belirir */
 .logo { 
   font-weight: 700; 
   font-size: clamp(1.5rem, 2vw, 2rem); 
@@ -72,11 +72,35 @@ a, button {
   background-color: var(--b-ink); 
   color: var(--b-bg);
   width: 100%;
-  transition: background-color 0.1s ease, color 0.1s ease;
+  cursor: pointer;
+  letter-spacing: -0.02em;
+  transition: letter-spacing 0.2s ease;
 }
-.logo:hover { 
-  background-color: var(--b-bg); 
-  color: var(--b-ink); 
+
+.logo::before {
+  content: "[\00a0";
+  opacity: 0;
+  transform: translateX(4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  font-weight: 400;
+}
+
+.logo::after {
+  content: "\00a0]";
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  font-weight: 400;
+}
+
+.logo:hover {
+  letter-spacing: 0.02em;
+}
+
+.logo:hover::before,
+.logo:hover::after {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .desktop-nav { 
