@@ -1,5 +1,5 @@
 /* ==========================================
-   ARDIYÉ // PURE BAUHAUS (STATIC MONO LOGO)
+   ARDIYÉ // PURE BAUHAUS (NEGATIVE LOGO INTERACTION)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
@@ -60,7 +60,7 @@ a, button {
   z-index: 1000;
 }
 
-/* Logo: Kırmızı hover kaldırıldı, monokrom siyah Bauhaus blok olarak sabit */
+/* Logo: Varsayılan olarak negatif (bej zemin, siyah metin), hover ile siyaha invert */
 .logo { 
   font-weight: 700; 
   font-size: clamp(1.5rem, 2vw, 2rem); 
@@ -69,9 +69,10 @@ a, button {
   height: 100%; 
   display: flex; 
   align-items: center;
-  background: var(--b-ink); 
-  color: var(--b-bg);
+  background-color: var(--b-bg); 
+  color: var(--b-ink);
   width: 100%;
+  transition: background-color 0.1s ease, color 0.1s ease;
 }
 .logo:hover { 
   background-color: var(--b-ink); 
