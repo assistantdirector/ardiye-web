@@ -60,7 +60,7 @@ a, button {
   z-index: 1000;
 }
 
-/* LOGO: Terminal İmleci */
+/* LOGO: Mekanik Baskı Kayması */
 .logo { 
   font-weight: 700; 
   font-size: clamp(1.5rem, 2vw, 2rem); 
@@ -73,19 +73,12 @@ a, button {
   color: var(--b-bg);
   width: 100%;
   cursor: pointer;
+  letter-spacing: -0.03em;
+  transition: transform 0.12s ease-out;
 }
 
-.logo::after {
-  content: "_";
-  display: inline-block;
-  opacity: 0;
-  margin-left: 2px;
-  color: var(--b-bg);
-}
-
-.logo:hover::after {
-  opacity: 1;
-  animation: terminalBlink 0.8s infinite;
+.logo:hover { 
+  transform: translate(2.5px, -1px);
 }
 
 @keyframes terminalBlink {
