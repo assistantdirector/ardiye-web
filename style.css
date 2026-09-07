@@ -1,5 +1,5 @@
 /* ==========================================
-   ARDIYÉ // PURE BAUHAUS (ALL RED HOVERS)
+   ARDIYÉ // PURE BAUHAUS (STATIC MONO LOGO)
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
@@ -60,6 +60,7 @@ a, button {
   z-index: 1000;
 }
 
+/* Logo: Kırmızı hover kaldırıldı, monokrom siyah Bauhaus blok olarak sabit */
 .logo { 
   font-weight: 700; 
   font-size: clamp(1.5rem, 2vw, 2rem); 
@@ -71,10 +72,9 @@ a, button {
   background: var(--b-ink); 
   color: var(--b-bg);
   width: 100%;
-  transition: background-color 0.1s ease, color 0.1s ease;
 }
 .logo:hover { 
-  background-color: var(--b-red); 
+  background-color: var(--b-ink); 
   color: var(--b-bg); 
 }
 
@@ -263,8 +263,8 @@ a, button {
 }
 .b-card:hover { 
   box-shadow: 6px 6px 0px var(--b-ink); 
-  background: var(--b-red); /* Kırmızı hover arka planı */
-  color: var(--b-bg);         /* Yazılar zemin beji rengine döner */
+  background: var(--b-red); 
+  color: var(--b-bg); 
 }
 
 .card-img { 
