@@ -2,26 +2,27 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>ardiyé — collective art space</title>
   <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
 
   <!-- HEADER -->
   <header class="header">
     <a href="index.html" class="logo">ardiyé</a>
-    <nav class="desktop-nav">
+    <nav class="desktop-nav" aria-label="Ana Menü">
       <a href="#narrative" class="nav-link">narrative</a>
       <a href="#residents" class="nav-link">residents</a>
       <a href="#works" class="nav-link">works</a>
       <a href="#contact" class="nav-link">contact</a>
     </nav>
-    <button class="menu-btn" id="menuToggle" aria-label="Toggle Navigation">[ menu ]</button>
+    <button class="menu-btn" id="menuToggle" aria-expanded="false" aria-label="Menüyü Aç/Kapat">[ menu ]</button>
   </header>
 
   <!-- MOBILE DRAWER -->
-  <div class="mobile-drawer" id="mobileDrawer">
+  <div class="mobile-drawer" id="mobileDrawer" aria-label="Mobil Menü">
     <a href="#narrative" class="nav-link">narrative</a>
     <a href="#residents" class="nav-link">residents</a>
     <a href="#works" class="nav-link">works</a>
@@ -67,7 +68,7 @@
         <div class="card-grid">
           <a href="artist-nazim.html" class="b-card">
             <div class="card-img square">
-              <img src="images/nazim-portrait.jpg" alt="nazım kahramantürk" class="parallax-img">
+              <img src="images/nazim-portrait.jpg" alt="nazım kahramantürk" class="parallax-img" loading="lazy">
             </div>
             <div class="card-meta">
               <span>resident // 01</span>
@@ -79,7 +80,7 @@
 
           <a href="artist-necef.html" class="b-card">
             <div class="card-img square">
-              <img src="images/necef-portrait.jpg" alt="necef mengüverdi" class="parallax-img">
+              <img src="images/necef-portrait.jpg" alt="necef mengüverdi" class="parallax-img" loading="lazy">
             </div>
             <div class="card-meta">
               <span>resident // 02</span>
@@ -105,7 +106,7 @@
         <div class="card-grid">
           <a href="project-ambient.html" class="b-card">
             <div class="card-img">
-              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="ambient archive" class="parallax-img">
+              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="ambient archive" class="parallax-img" loading="lazy">
             </div>
             <div class="card-meta">
               <span>work // 001</span>
@@ -117,7 +118,7 @@
 
           <a href="project-novaqua.html" class="b-card">
             <div class="card-img">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="novaqua project" class="parallax-img">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="novaqua project" class="parallax-img" loading="lazy">
             </div>
             <div class="card-meta">
               <span>work // 002</span>
@@ -147,7 +148,7 @@
             </a>
             <span class="footer-note">direct inquiries / open for collab</span>
           </div>
-          <nav class="social-nav">
+          <nav class="social-nav" aria-label="Sosyal Medya Bağlantıları">
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">instagram &nearr;</a>
             <a href="https://are.na" target="_blank" rel="noopener noreferrer">are.na &nearr;</a>
             <a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer">soundcloud &nearr;</a>
@@ -157,75 +158,5 @@
     </footer>
   </main>
 
-  <script>
-    // Mobil Menü Çekmecesi
-    const menuBtn = document.getElementById('menuToggle');
-    const mobileDrawer = document.getElementById('mobileDrawer');
-    const drawerLinks = mobileDrawer.querySelectorAll('.nav-link');
-
-    menuBtn.addEventListener('click', () => {
-      const isOpen = mobileDrawer.classList.toggle('is-open');
-      menuBtn.textContent = isOpen ? '[ close ]' : '[ menu ]';
-    });
-
-    drawerLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileDrawer.classList.remove('is-open');
-        menuBtn.textContent = '[ menu ]';
-      });
-    });
-
-    // Menü Bağlantılarına Tıklandığında İlgili Bölüme Pürüzsüz Senkron Atlama
-    const navLinks = document.querySelectorAll('.desktop-nav .nav-link, .mobile-drawer .nav-link');
-    navLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        const targetId = link.getAttribute('href').replace('#', '');
-        const targetElement = document.getElementById(targetId);
-        
-        if (targetElement) {
-          e.preventDefault();
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-
-    // 1. Dikey Scroll Paralaksı (SADECE Kart Görselleri İçin Çerçeve İçi Mikro Derinlik)
-    const parallaxImgs = document.querySelectorAll('.parallax-img');
-
-    window.addEventListener('scroll', () => {
-      parallaxImgs.forEach(img => {
-        const rect = img.parentElement.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          const shiftY = (rect.top - window.innerHeight / 2) * 0.05;
-          img.style.transform = `scale(1.08) translateY(${shiftY}px)`;
-        }
-      });
-    }, { passive: true });
-
-    // 2. Kartlarda Saf X & Y Eksenine Kilitli 2D Manyetik Hover
-    if (window.matchMedia('(hover: hover)').matches) {
-      const cards = document.querySelectorAll('.b-card');
-
-      cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-          const rect = card.getBoundingClientRect();
-          const normX = ((e.clientX - rect.left) / rect.width) - 0.5;
-          const normY = ((e.clientY - rect.top) / rect.height) - 0.5;
-
-          const moveX = normX * 12;
-          const moveY = normY * 12;
-
-          card.style.transform = `translate(${moveX}px, ${moveY}px)`;
-        });
-
-        card.addEventListener('mouseleave', () => {
-          card.style.transform = 'translate(0px, 0px)';
-        });
-      });
-    }
-  </script>
 </body>
 </html>
