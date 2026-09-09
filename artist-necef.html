@@ -1,50 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>necef mengüverdi / ardiyé</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>necef mengüverdi — resident 02 // ardiyé</title>
   <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
 
-  <header class="header">
+  <!-- HEADER -->
+  <header class="header header-detail">
     <a href="index.html" class="logo">ardiyé</a>
-    <button class="menu-btn" onclick="window.location.href='index.html'">&larr; back</button>
+    <a href="index.html#residents" class="back-btn">&larr; [ back ]</a>
+  </header>
+
+  <!-- ARTIST HERO -->
+  <header class="artist-hero">
+    <h1 class="artist-name">
+      <span>resident // 02</span>
+      necef mengüverdi
+    </h1>
   </header>
 
   <main>
-    <section class="detail-hero">
-      <h1 class="detail-title">necef<br>mengüverdi</h1>
-    </section>
-
+    <!-- PRACTITIONER SPEC & PORTRAIT -->
     <section class="grid-section">
       <div class="section-head">
-        <img src="images/necef-portrait.jpg" alt="necef mengüverdi" class="detail-img portrait">
-        <ul class="detail-meta-list">
-          <li><span>role</span> <span>visual artist</span></li>
-          <li><span>focus</span> <span>spatial memory / physical forms</span></li>
-          <li><span>materials</span> <span>concrete / synthetic polymers</span></li>
-        </ul>
-      </div>
-      
-      <div class="section-body">
-        <div class="text-body">
-          <p>necef mengüverdi is a visual artist investigating the physical retention of memory within raw environments.</p>
-          <p>her practice explores the intersection of spatial architecture and material resistance. by observing how natural and artificial elements degrade, adapt, and fuse over time, she documents the fragmented dialogues established by decaying forms.</p>
-          <p>refusing the concept of a "finished piece," her works function as continuous experiments—exposing the underlying tension between structural permanence and inevitable erosion.</p>
+        <div class="artist-portrait-frame">
+          <img src="images/necef-portrait.jpg" alt="necef mengüverdi" class="parallax-img">
         </div>
       </div>
-    </section>
-
-    <section class="grid-section" style="border-bottom: none;">
-      <div class="section-head"><span class="section-num">navigation</span></div>
       <div class="section-body">
-        <a href="index.html#residents" class="back-link">&larr; back to index</a>
+        <div class="text-body">
+          <p>visual and spatial artist investigating tactile memory, structural decay, and temporary material compositions through print, sculpture, and physical archives.</p>
+        </div>
+
+        <ul class="spec-list">
+          <li class="spec-item">
+            <span class="spec-label">role</span>
+            <span class="spec-value">visual artist / researcher</span>
+          </li>
+          <li class="spec-item">
+            <span class="spec-label">focus</span>
+            <span class="spec-value">tactile memory / structural decay / raw print</span>
+          </li>
+          <li class="spec-item">
+            <span class="spec-label">medium</span>
+            <span class="spec-value">mixed-media / sculpture / industrial paper</span>
+          </li>
+        </ul>
       </div>
     </section>
+
+    <!-- FOOTER TRANSITION -->
+    <footer class="grid-section" id="contact">
+      <div class="section-head">
+        <div class="title-group">
+          <span class="section-num">&rarr;</span>
+          <h2 class="section-title">next</h2>
+        </div>
+        <p class="section-desc">continue exploring the collective works.</p>
+      </div>
+      <div class="section-body">
+        <div class="footer-container">
+          <div class="footer-main-action">
+            <a href="project-ambient.html" class="footer-action-btn">
+              work 001: ambient &rarr;
+            </a>
+            <span class="footer-note">sound installation archive</span>
+          </div>
+          <nav class="social-nav" aria-label="Navigasyon">
+            <a href="index.html#residents">all residents &nearr;</a>
+            <a href="index.html">main index &nearr;</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
   </main>
 
-  <script src="app.js"></script>
 </body>
 </html>
