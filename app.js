@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const isOpen = mobileDrawer.classList.toggle('is-open');
       menuBtn.textContent = isOpen ? '[ close ]' : '[ menu ]';
       menuBtn.setAttribute('aria-expanded', isOpen.toString());
-      document.body.style.overflow = isOpen ? 'hidden' : ''; // Menü açıkken arka plan kaymasını engeller
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     drawerLinks.forEach(link => {
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* -------------------------------------------------------------
-     4. SAF X & Y MANYETİK HOVER (YALNIZCA FARE/DESKTOP İÇİN)
+     4. SAF X & Y MANYETİK HOVER (YALNIZCA DESKTOP İÇİN)
      ------------------------------------------------------------- */
   const isPrecisePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
