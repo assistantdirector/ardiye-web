@@ -1,50 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>protocol: novaqua / ardiyé</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>novaqua — work 002 // ardiyé</title>
   <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
 
-  <header class="header">
+  <!-- HEADER -->
+  <header class="header header-detail">
     <a href="index.html" class="logo">ardiyé</a>
-    <button class="menu-btn" onclick="window.location.href='index.html'">&larr; back</button>
+    <a href="index.html#works" class="back-btn">&larr; [ back ]</a>
+  </header>
+
+  <!-- WORK HERO -->
+  <header class="artist-hero">
+    <h1 class="artist-name">
+      <span>work // 002</span>
+      novaqua
+    </h1>
   </header>
 
   <main>
-    <section class="detail-hero">
-      <h1 class="detail-title">protocol:<br>novaqua</h1>
-    </section>
-
+    <!-- OVERVIEW SECTION -->
     <section class="grid-section">
       <div class="section-head">
-        <img src="images/novaqua-thumb.jpg" alt="protocol: novaqua" class="detail-img">
-        <ul class="detail-meta-list">
-          <li><span>category</span> <span>mixed media / documentation</span></li>
-          <li><span>status</span> <span>ongoing reaction</span></li>
-          <li><span>date</span> <span>august 2026</span></li>
-        </ul>
-      </div>
-      
-      <div class="section-body">
-        <div class="text-body">
-          <p>protocol: novaqua is not a static sculpture, but an ongoing material process. it is the documentation of a continuous chemical reaction occurring on a micro-industrial scale.</p>
-          <p>the experiment revolves around the application of a synthetic protective layer—derived from heavy-duty commercial water conditioners—over fragments of submerged industrial debris.</p>
-          <p>the primary objective is to observe the friction between the corrosive nature of the raw metal and the synthetic isolation barrier. the process is continuously recorded, mapping the physical transformation and chemical degradation over extended periods.</p>
+        <div class="detail-media-container" style="aspect-ratio: 16/10;">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="novaqua installation" class="parallax-img" loading="lazy">
         </div>
       </div>
-    </section>
-
-    <section class="grid-section" style="border-bottom: none;">
-      <div class="section-head"><span class="section-num">navigation</span></div>
       <div class="section-body">
-        <a href="index.html#works" class="back-link">&larr; back to index</a>
+        <div class="text-body">
+          <p>novaqua is a mixed-media spatial intervention exploring transient fluidity. the installation relies on suspended industrial polymers, saline solutions, and controlled light dispersion.</p>
+        </div>
+
+        <ul class="spec-list">
+          <li class="spec-item">
+            <span class="spec-label">format</span>
+            <span class="spec-value">site-specific polymer installation</span>
+          </li>
+          <li class="spec-item">
+            <span class="spec-label">medium</span>
+            <span class="spec-value">saline fluid / industrial polymers / projection</span>
+          </li>
+          <li class="spec-item">
+            <span class="spec-label">year</span>
+            <span class="spec-value">2024 &mdash; ongoing</span>
+          </li>
+        </ul>
       </div>
     </section>
+
+    <!-- FOOTER TRANSITION -->
+    <footer class="grid-section" id="contact">
+      <div class="section-head">
+        <div class="title-group">
+          <span class="section-num">&rarr;</span>
+          <h2 class="section-title">next</h2>
+        </div>
+        <p class="section-desc">return to root studio archive.</p>
+      </div>
+      <div class="section-body">
+        <div class="footer-container">
+          <div class="footer-main-action">
+            <a href="index.html" class="footer-action-btn">
+              &larr; return to index
+            </a>
+            <span class="footer-note">collective art space // root</span>
+          </div>
+          <nav class="social-nav" aria-label="Navigasyon">
+            <a href="index.html#works">works &nearr;</a>
+            <a href="index.html">main index &nearr;</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
   </main>
 
-  <script src="app.js"></script>
 </body>
 </html>
