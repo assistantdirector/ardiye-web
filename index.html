@@ -1,163 +1,97 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <title>ardiyé — collective art space</title>
+  <meta name="description" content="ardiyé is a collective art space for the unfinished: an archive of raw, unpolished, continuous creation across film, sound and spatial work.">
+  <meta name="theme-color" content="#f2eee3">
+  <link rel="canonical" href="https://www.ardiye.art/">
+  <meta property="og:title" content="ardiyé — collective art space">
+  <meta property="og:description" content="ardiyé is a collective art space for the unfinished: an archive of raw, unpolished, continuous creation across film, sound and spatial work.">
+  <meta property="og:url" content="https://www.ardiye.art/">
+  <meta property="og:site_name" content="ardiyé">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&amp;family=Geist:wght@400;500;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&amp;family=Geist:wght@400;500;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap"></noscript>
+  <script>document.documentElement.classList.add('js');try{var sc=localStorage.getItem('ardiye-scheme');if(['blue','yellow','black','red','ultra'].indexOf(sc)>-1)document.documentElement.dataset.scheme=sc}catch(e){}try{document.documentElement.dataset.mode=localStorage.getItem('ardiye-mode')==='final'?'final':'draft'}catch(e){document.documentElement.dataset.mode='draft'}</script>
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.ardiye.art/#org","name":"ardiyé","url":"https://www.ardiye.art/","email":"info@ardiye.art","description":"A collective art space for the unfinished."},{"@type":"WebSite","@id":"https://www.ardiye.art/#site","url":"https://www.ardiye.art/","name":"ardiyé","publisher":{"@id":"https://www.ardiye.art/#org"}}]}</script>
 </head>
 <body>
+<a class="skip" href="#main">skip to content</a>
+<canvas id="sketch" aria-hidden="true"></canvas>
+<div class="ruler l" aria-hidden="true"></div><div class="ruler r" aria-hidden="true"></div>
+<header class="bar"><a class="logo" href="#top" aria-label="ardiyé, home">ardiyé</a>
+<nav class="nav" aria-label="Main"><a href="#narrative">about</a><a href="#residents">resident</a><a href="#works">works</a><a href="#log">history</a><a href="#contact">export</a></nav>
+<div class="tools"><button class="cmdk" id="cmdk" type="button" aria-label="Open command palette">&#8984;K</button><button class="scheme" id="scheme" type="button" aria-label="Change colour scheme"><i aria-hidden="true"></i><span>bauhaus</span></button><div class="mode" role="group" aria-label="View mode"><button type="button" data-mode="draft" aria-pressed="true">draft</button><button type="button" data-mode="final" aria-pressed="false">final</button></div></div></header>
+<p class="readout" id="readout" aria-hidden="true">x 0000 &nbsp; y 0000</p>
+<button class="reset" id="reset" type="button" hidden>reset layout</button>
+<main id="main">
+  <section class="sec hero" id="top" aria-label="cover">
+    <p class="mono top">untitled-1 &mdash; ardiyé &mdash; <span class="mode-word">draft</span></p>
+    <svg class="geo" viewBox="0 0 400 400" aria-hidden="true" focusable="false"><circle class="g1" cx="140" cy="140" r="110"/><rect class="g2" x="190" y="190" width="170" height="170"/><polygon class="g3" points="60,360 150,215 240,360"/><line class="g4" x1="0" y1="200" x2="400" y2="200"/><line class="g4" x1="200" y1="0" x2="200" y2="400"/></svg>
+    <h1 class="sel" data-name="heading — raw flux" aria-label="raw flux"><span class="w"><span class="ch" style="--i:0">r</span><span class="ch" style="--i:1">a</span><span class="ch" style="--i:2">w</span></span><span class="w"><span class="ch" style="--i:3">f</span><span class="ch" style="--i:4">l</span><span class="ch" style="--i:5">u</span><span class="ch" style="--i:6">x</span></span></h1>
+    <div class="intro"><p class="deck sel" data-name="text — subtitle">a space for the <s>finished</s> <b>unfinished.</b></p>
+    <p class="mono meta">collective art space<br>press ? for shortcuts</p></div>
+  </section>
 
-  <!-- HEADER -->
-  <header class="header">
-    <a href="index.html" class="logo">ardiyé</a>
-    <nav class="desktop-nav" aria-label="Ana Menü">
-      <a href="#narrative" class="nav-link">narrative</a>
-      <a href="#residents" class="nav-link">residents</a>
-      <a href="#works" class="nav-link">works</a>
-      <a href="#contact" class="nav-link">contact</a>
-    </nav>
-    <button class="menu-btn" id="menuToggle" aria-expanded="false" aria-label="Menüyü Aç/Kapat">[ menu ]</button>
-  </header>
+  <section class="sec" id="narrative" data-n="01 / about" aria-label="about">
+    <div class="split">
+      <div class="sel" data-name="text — manifesto"><p class="big">ardiyé is a space for the <em>unfinished.</em> we collect the <span data-w="raw">raw</span>, the <span data-w="unpolished">unpolished</span>, and the <span data-w="fragmented">fragmented</span>.</p>
+      <div class="two"><p>an archive for continuous creation. no curation, no perfect result: only the documentation of the flux.</p></div></div>
+      <aside class="panel" aria-label="layers"><p class="ph">layers</p>
+        <ul class="layers"><li><button type="button" class="lyr" data-l="raw" aria-pressed="true"><i class="eye"></i><b>raw</b><span>material before it has been decided on.</span></button></li><li><button type="button" class="lyr" data-l="unpolished" aria-pressed="true"><i class="eye"></i><b>unpolished</b><span>edges are left visible, on purpose.</span></button></li><li><button type="button" class="lyr" data-l="fragmented" aria-pressed="true"><i class="eye"></i><b>fragmented</b><span>a part is allowed to stand for the whole.</span></button></li></ul></aside>
+    </div>
+  </section>
 
-  <!-- MOBILE DRAWER -->
-  <div class="mobile-drawer" id="mobileDrawer" aria-label="Mobil Menü">
-    <a href="#narrative" class="nav-link">narrative</a>
-    <a href="#residents" class="nav-link">residents</a>
-    <a href="#works" class="nav-link">works</a>
-    <a href="#contact" class="nav-link">contact</a>
-  </div>
+  <div class="marq" aria-hidden="true"><div class="track"><span class="f">raw</span><i></i><span class="o">unpolished</span><i></i><span class="f">fragmented</span><i></i><span class="o">unfinished</span><i></i><span class="f">in progress</span><i></i><span class="f">raw</span><i></i><span class="o">unpolished</span><i></i><span class="f">fragmented</span><i></i><span class="o">unfinished</span><i></i><span class="f">in progress</span><i></i></div></div>
 
-  <!-- HERO SECTION -->
-  <header class="hero">
-    <h1 class="hero-title">
-      <span>collective art space</span>
-      raw flux.
-    </h1>
-  </header>
+  <section class="sec" id="residents" data-n="02 / resident" aria-label="residents">
+    <a class="res" href="artist-nazim.html">
+      <div class="sel photo" data-name="image — resident 01"><div class="art"><img src="images/nazim-portrait.jpg" width="400" height="500" alt="nazım kahramantürk" loading="lazy" decoding="async" style="object-position:center 25%"></div></div>
+      <div class="info"><p class="mono">resident 01 &middot; filmmaker / director</p><h2>nazım kahramantürk</h2><p>filmmaking, post-production workflows, cinematography and software tooling.</p><span class="more">&rarr;</span></div>
+    </a>
+  </section>
 
-  <main>
-    <!-- 01 NARRATIVE -->
-    <section class="grid-section" id="narrative">
-      <div class="section-head">
-        <div class="title-group">
-          <span class="section-num">01</span>
-          <h2 class="section-title">narrative</h2>
-        </div>
-        <p class="section-desc">ardiyé is a space for the unfinished. we collect the raw, the unpolished, and the fragmented.</p>
-      </div>
-      <div class="section-body">
-        <div class="text-body">
-          <p>acting as an archive for continuous creation, we step away from traditional curation. we provide room for the starting point.</p>
-          <p>there is no pursuit of the perfect result here; only the documentation of the flux.</p>
-        </div>
-      </div>
-    </section>
+  <section class="sec" id="works" data-n="03 / works" aria-label="works">
+    <div class="boards">
+    <a class="board " href="project-ambient.html" data-name="frame 01 — ambient"><div class="art"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=1280&amp;h=853&amp;q=70" srcset="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=800&amp;h=533&amp;q=70 800w, https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=1280&amp;h=853&amp;q=70 1280w, https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=1920&amp;h=1280&amp;q=70 1920w" sizes="(min-width:900px) 45vw, 92vw" width="1280" height="853" alt="ambient archive" loading="lazy" decoding="async"></div>
+      <div class="cap"><h3>ambient</h3><p class="sub">4-channel sound, tape &middot; 2024&ndash;</p><p>sonic spatialization, acoustic resonances and electroacoustic field studies.</p><span class="more">&rarr;</span></div></a>
+    <span id="work-2" class="anchor"></span>
+    <a class="board low" href="project-novaqua.html" data-name="frame 02 — novaqua"><div class="art"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;w=1280&amp;h=853&amp;q=70" srcset="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;w=800&amp;h=533&amp;q=70 800w, https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;w=1280&amp;h=853&amp;q=70 1280w, https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;w=1920&amp;h=1280&amp;q=70 1920w" sizes="(min-width:900px) 45vw, 92vw" width="1280" height="853" alt="novaqua project" loading="lazy" decoding="async"></div>
+      <div class="cap"><h3>novaqua</h3><p class="sub">polymer installation, saline &middot; 2024&ndash;</p><p>mixed-media spatial installation exploring transient fluidity and structural decay.</p><span class="more">&rarr;</span></div></a>
+    </div>
+  </section>
 
-    <!-- 02 RESIDENTS -->
-    <section class="grid-section" id="residents">
-      <div class="section-head">
-        <div class="title-group">
-          <span class="section-num">02</span>
-          <h2 class="section-title">residents</h2>
-        </div>
-        <p class="section-desc">practitioners occupying the physical and digital studio spaces.</p>
-      </div>
-      <div class="section-body">
-        <div class="card-grid">
-          <a href="artist-nazim.html" class="b-card">
-            <div class="card-img square">
-              <img src="images/nazim-portrait.jpg" alt="nazım kahramantürk" class="parallax-img" loading="lazy">
-            </div>
-            <div class="card-meta">
-              <span>resident // 01</span>
-              <span>[ profile &rarr; ]</span>
-            </div>
-            <h3 class="card-title">nazım kahramantürk</h3>
-            <p class="card-desc">filmmaking, post-production workflows, cinematography and software tools.</p>
-          </a>
+  <!-- sample entries, replace with real notes -->
+  <section class="sec" id="log" data-n="04 / history" aria-label="history">
+    <div class="hist">
+      <h2>version <em>history</em></h2>
+      
+      <ol>
+        <li><b>v0.3</b><time datetime="2026-09">2026.09</time><span>novaqua &mdash; new suspension test, notes pending</span><em>work 02</em></li>
+        <li><b>v0.2</b><time datetime="2026-06">2026.06</time><span>ambient &mdash; tape loops re-recorded, unedited</span><em>work 01</em></li>
+        <li><b>v0.1</b><time datetime="2026-03">2026.03</time><span>studio open for visits by appointment</span><em>space</em></li>
+      </ol>
+    </div>
+  </section>
 
-          <a href="artist-necef.html" class="b-card">
-            <div class="card-img square">
-              <img src="images/necef-portrait.jpg" alt="necef mengüverdi" class="parallax-img" loading="lazy">
-            </div>
-            <div class="card-meta">
-              <span>resident // 02</span>
-              <span>[ profile &rarr; ]</span>
-            </div>
-            <h3 class="card-title">necef mengüverdi</h3>
-            <p class="card-desc">visual arts, spatial memory, tactile material research and raw forms.</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 03 WORKS -->
-    <section class="grid-section" id="works">
-      <div class="section-head">
-        <div class="title-group">
-          <span class="section-num">03</span>
-          <h2 class="section-title">works</h2>
-        </div>
-        <p class="section-desc">ongoing productions, archival objects, audio drafts and prints.</p>
-      </div>
-      <div class="section-body">
-        <div class="card-grid">
-          <a href="project-ambient.html" class="b-card">
-            <div class="card-img">
-              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="ambient archive" class="parallax-img" loading="lazy">
-            </div>
-            <div class="card-meta">
-              <span>work // 001</span>
-              <span>[ archive &rarr; ]</span>
-            </div>
-            <h3 class="card-title">ambient</h3>
-            <p class="card-desc">sonic spatialization, acoustic resonances and electroacoustic field studies.</p>
-          </a>
-
-          <a href="project-novaqua.html" class="b-card">
-            <div class="card-img">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="novaqua project" class="parallax-img" loading="lazy">
-            </div>
-            <div class="card-meta">
-              <span>work // 002</span>
-              <span>[ archive &rarr; ]</span>
-            </div>
-            <h3 class="card-title">novaqua</h3>
-            <p class="card-desc">mixed-media spatial installation exploring transient fluidity and structural decay.</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 04 CONTACT / FOOTER -->
-    <footer class="grid-section" id="contact">
-      <div class="section-head">
-        <div class="title-group">
-          <span class="section-num">04</span>
-          <h2 class="section-title">contact</h2>
-        </div>
-        <p class="section-desc">physical archive & workspace / izmir, tr</p>
-      </div>
-      <div class="section-body">
-        <div class="footer-container">
-          <div class="footer-main-action">
-            <a href="mailto:info@ardiye.art" class="footer-action-btn">
-              [ get in touch ] &rarr;
-            </a>
-            <span class="footer-note">direct inquiries / open for collab</span>
-          </div>
-          <nav class="social-nav" aria-label="Sosyal Medya Bağlantıları">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">instagram &nearr;</a>
-            <a href="https://are.na" target="_blank" rel="noopener noreferrer">are.na &nearr;</a>
-            <a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer">soundcloud &nearr;</a>
-          </nav>
-        </div>
-      </div>
-    </footer>
-  </main>
-
+  <section class="sec exit" id="contact" data-n="05 / export" aria-label="export">
+    <svg class="geo geo2" viewBox="0 0 400 400" aria-hidden="true" focusable="false"><circle class="g1" cx="200" cy="200" r="160"/><polygon class="g3" points="200,70 330,300 70,300"/></svg>
+    <h2>never finished.<br><em>say hello.</em></h2>
+    <p class="mail" id="mail">info@ardiye.art</p>
+    <div class="actions"><a class="btn solid" href="mailto:info@ardiye.art">send an email</a><button class="btn" type="button" id="copy">copy address</button><span id="copy-note" role="status">open for collaboration</span></div>
+    <!-- TODO: replace with the collective's real profile URLs -->
+    <div class="foot">
+      <div><h4>files</h4><a href="index.html">index</a><a href="artist-nazim.html">nazım kahramantürk</a><a href="project-ambient.html">ambient</a><a href="project-novaqua.html">novaqua</a></div>
+      <div><h4>elsewhere</h4><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">instagram &nearr;</a><a href="https://are.na" target="_blank" rel="noopener noreferrer">are.na &nearr;</a><a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer">soundcloud &nearr;</a></div>
+      
+    </div>
+    <p class="colophon">&copy; <span id="year">2026</span> ardiyé</p>
+  </section>
+</main>
 </body>
 </html>

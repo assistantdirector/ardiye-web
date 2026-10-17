@@ -1,84 +1,50 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <title>novaqua — work 002 // ardiyé</title>
+  <meta name="description" content="novaqua: a mixed-media spatial intervention exploring transient fluidity with industrial polymers, saline solutions and controlled light. Work 002 at ardiyé.">
+  <meta name="theme-color" content="#f2eee3">
+  <link rel="canonical" href="https://www.ardiye.art/project-novaqua.html">
+  <meta property="og:title" content="novaqua — work 002 // ardiyé">
+  <meta property="og:description" content="novaqua: a mixed-media spatial intervention exploring transient fluidity with industrial polymers, saline solutions and controlled light. Work 002 at ardiyé.">
+  <meta property="og:url" content="https://www.ardiye.art/project-novaqua.html">
+  <meta property="og:site_name" content="ardiyé">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&amp;family=Geist:wght@400;500;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&amp;family=Geist:wght@400;500;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap"></noscript>
+  <script>document.documentElement.classList.add('js');try{var sc=localStorage.getItem('ardiye-scheme');if(['blue','yellow','black','red','ultra'].indexOf(sc)>-1)document.documentElement.dataset.scheme=sc}catch(e){}try{document.documentElement.dataset.mode=localStorage.getItem('ardiye-mode')==='final'?'final':'draft'}catch(e){document.documentElement.dataset.mode='draft'}</script>
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ardiyé","item":"https://www.ardiye.art/"},{"@type":"ListItem","position":2,"name":"works","item":"https://www.ardiye.art/#works"},{"@type":"ListItem","position":3,"name":"novaqua","item":"https://www.ardiye.art/project-novaqua.html"}]}]}</script>
 </head>
-<body>
-
-  <!-- HEADER -->
-  <header class="header header-detail">
-    <a href="index.html" class="logo">ardiyé</a>
-    <a href="index.html#works" class="back-btn">&larr; [ back ]</a>
-  </header>
-
-  <!-- WORK HERO -->
-  <header class="artist-hero">
-    <h1 class="artist-name">
-      <span>work // 002</span>
-      novaqua
-    </h1>
-  </header>
-
-  <main>
-    <!-- OVERVIEW SECTION -->
-    <section class="grid-section">
-      <div class="section-head">
-        <div class="detail-media-container" style="aspect-ratio: 16/10;">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="novaqua installation" class="parallax-img" loading="lazy">
-        </div>
-      </div>
-      <div class="section-body">
-        <div class="text-body">
-          <p>novaqua is a mixed-media spatial intervention exploring transient fluidity. the installation relies on suspended industrial polymers, saline solutions, and controlled light dispersion.</p>
-        </div>
-
-        <ul class="spec-list">
-          <li class="spec-item">
-            <span class="spec-label">format</span>
-            <span class="spec-value">site-specific polymer installation</span>
-          </li>
-          <li class="spec-item">
-            <span class="spec-label">medium</span>
-            <span class="spec-value">saline fluid / industrial polymers / projection</span>
-          </li>
-          <li class="spec-item">
-            <span class="spec-label">year</span>
-            <span class="spec-value">2024 &mdash; ongoing</span>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- FOOTER TRANSITION -->
-    <footer class="grid-section" id="contact">
-      <div class="section-head">
-        <div class="title-group">
-          <span class="section-num">&rarr;</span>
-          <h2 class="section-title">next</h2>
-        </div>
-        <p class="section-desc">return to root studio archive.</p>
-      </div>
-      <div class="section-body">
-        <div class="footer-container">
-          <div class="footer-main-action">
-            <a href="index.html" class="footer-action-btn">
-              &larr; return to index
-            </a>
-            <span class="footer-note">collective art space // root</span>
-          </div>
-          <nav class="social-nav" aria-label="Navigasyon">
-            <a href="index.html#works">works &nearr;</a>
-            <a href="index.html">main index &nearr;</a>
-          </nav>
-        </div>
-      </div>
-    </footer>
-  </main>
-
+<body class="dpage">
+<a class="skip" href="#main">skip to content</a>
+<canvas id="sketch" aria-hidden="true"></canvas>
+<div class="ruler l" aria-hidden="true"></div><div class="ruler r" aria-hidden="true"></div>
+<header class="bar"><a class="logo" href="index.html" aria-label="ardiyé, home">ardiyé</a>
+<nav class="nav" aria-label="Main"><a href="index.html#narrative">about</a><a href="index.html#residents">resident</a><a href="index.html#works">works</a><a href="index.html#log">history</a><a href="index.html#contact">export</a></nav>
+<div class="tools"><button class="cmdk" id="cmdk" type="button" aria-label="Open command palette">&#8984;K</button><button class="scheme" id="scheme" type="button" aria-label="Change colour scheme"><i aria-hidden="true"></i><span>bauhaus</span></button><div class="mode" role="group" aria-label="View mode"><button type="button" data-mode="draft" aria-pressed="true">draft</button><button type="button" data-mode="final" aria-pressed="false">final</button></div></div></header>
+<p class="readout" id="readout" aria-hidden="true">x 0000 &nbsp; y 0000</p>
+<button class="reset" id="reset" type="button" hidden>reset layout</button>
+<main id="main">
+<section class="sec dhero"><p class="mono"><a href="index.html">ardiyé</a> / <a href="index.html#works">works</a> / work 002</p>
+<h1>novaqua</h1>
+<div class="sel dimg " data-name="image — work 002"><div class="art"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;w=1280&amp;h=853&amp;q=70" srcset="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;w=800&amp;h=533&amp;q=70 800w, https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;w=1280&amp;h=853&amp;q=70 1280w, https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;w=1920&amp;h=1280&amp;q=70 1920w" sizes="(min-width:900px) 70vw, 92vw" width="1280" height="853" alt="novaqua installation" fetchpriority="high" decoding="async"></div></div></section>
+<section class="sec dbody"><p class="prose">novaqua is a mixed-media spatial intervention exploring transient fluidity. the installation relies on suspended industrial polymers, saline solutions, and controlled light dispersion.</p><aside class="panel"><p class="ph">properties</p><dl class="spec"><div><dt>format</dt><dd>site-specific polymer installation</dd></div><div><dt>medium</dt><dd>saline fluid / industrial polymers / projection</dd></div><div><dt>year</dt><dd>2024 &mdash; ongoing</dd></div></dl></aside></section>
+<nav class="dnext" aria-label="Page navigation"><a class="btn" href="project-ambient.html">&larr; previous: ambient</a><span></span></nav>
+<footer class="sec exit dfoot" id="contact">
+    <p class="mail" id="mail">info@ardiye.art</p>
+    <div class="actions"><a class="btn solid" href="mailto:info@ardiye.art">send an email</a><button class="btn" type="button" id="copy">copy address</button><span id="copy-note" role="status">open for collaboration</span></div>
+    <!-- TODO: replace with the collective's real profile URLs -->
+    <div class="foot">
+      <div><h4>files</h4><a href="index.html">index</a><a href="artist-nazim.html">nazım kahramantürk</a><a href="project-ambient.html">ambient</a><a href="project-novaqua.html">novaqua</a></div>
+      <div><h4>elsewhere</h4><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">instagram &nearr;</a><a href="https://are.na" target="_blank" rel="noopener noreferrer">are.na &nearr;</a><a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer">soundcloud &nearr;</a></div>
+      
+    </div>
+    <p class="colophon">&copy; <span id="year">2026</span> ardiyé</p></footer>
+</main>
 </body>
 </html>

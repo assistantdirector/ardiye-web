@@ -1,84 +1,50 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  <title>nazım kahramantürk — resident 01 // ardiyé</title>
+  <title>nazım kahramantürk — resident // ardiyé</title>
+  <meta name="description" content="nazım kahramantürk: filmmaker and director working with raw visual storytelling, rhythm-driven editing and bespoke digital tools. Resident at ardiyé.">
+  <meta name="theme-color" content="#f2eee3">
+  <link rel="canonical" href="https://www.ardiye.art/artist-nazim.html">
+  <meta property="og:title" content="nazım kahramantürk — resident // ardiyé">
+  <meta property="og:description" content="nazım kahramantürk: filmmaker and director working with raw visual storytelling, rhythm-driven editing and bespoke digital tools. Resident at ardiyé.">
+  <meta property="og:url" content="https://www.ardiye.art/artist-nazim.html">
+  <meta property="og:site_name" content="ardiyé">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&amp;family=Geist:wght@400;500;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&amp;family=Geist:wght@400;500;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap"></noscript>
+  <script>document.documentElement.classList.add('js');try{var sc=localStorage.getItem('ardiye-scheme');if(['blue','yellow','black','red','ultra'].indexOf(sc)>-1)document.documentElement.dataset.scheme=sc}catch(e){}try{document.documentElement.dataset.mode=localStorage.getItem('ardiye-mode')==='final'?'final':'draft'}catch(e){document.documentElement.dataset.mode='draft'}</script>
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ardiyé","item":"https://www.ardiye.art/"},{"@type":"ListItem","position":2,"name":"residents","item":"https://www.ardiye.art/#residents"},{"@type":"ListItem","position":3,"name":"nazım kahramantürk","item":"https://www.ardiye.art/artist-nazim.html"}]},{"@type":"Person","name":"nazım kahramantürk","url":"https://www.ardiye.art/artist-nazim.html","memberOf":{"@type":"Organization","name":"ardiyé","url":"https://www.ardiye.art/"}}]}</script>
 </head>
-<body>
-
-  <!-- HEADER -->
-  <header class="header header-detail">
-    <a href="index.html" class="logo">ardiyé</a>
-    <a href="index.html#residents" class="back-btn">&larr; [ back ]</a>
-  </header>
-
-  <!-- ARTIST HERO -->
-  <header class="artist-hero">
-    <h1 class="artist-name">
-      <span>resident // 01</span>
-      nazım kahramantürk
-    </h1>
-  </header>
-
-  <main>
-    <!-- PRACTITIONER SPEC & PORTRAIT -->
-    <section class="grid-section">
-      <div class="section-head">
-        <div class="artist-portrait-frame">
-          <img src="images/nazim-portrait.jpg" alt="nazım kahramantürk" class="parallax-img">
-        </div>
-      </div>
-      <div class="section-body">
-        <div class="text-body">
-          <p>filmmaker and director focusing on raw, unpolished visual storytelling, rhythm-driven editing structures, and bespoke digital tools for independent workflows.</p>
-        </div>
-
-        <ul class="spec-list">
-          <li class="spec-item">
-            <span class="spec-label">role</span>
-            <span class="spec-value">filmmaker / director</span>
-          </li>
-          <li class="spec-item">
-            <span class="spec-label">focus</span>
-            <span class="spec-value">raw cinematography / multi-cam workflow / cadence</span>
-          </li>
-          <li class="spec-item">
-            <span class="spec-label">software & tools</span>
-            <span class="spec-value">davinci resolve / after effects / swift utilities</span>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- FOOTER TRANSITION -->
-    <footer class="grid-section" id="contact">
-      <div class="section-head">
-        <div class="title-group">
-          <span class="section-num">&rarr;</span>
-          <h2 class="section-title">next</h2>
-        </div>
-        <p class="section-desc">continue exploring the residency archive.</p>
-      </div>
-      <div class="section-body">
-        <div class="footer-container">
-          <div class="footer-main-action">
-            <a href="artist-necef.html" class="footer-action-btn">
-              necef mengüverdi &rarr;
-            </a>
-            <span class="footer-note">resident // 02 — visual & spatial arts</span>
-          </div>
-          <nav class="social-nav" aria-label="Navigasyon">
-            <a href="index.html#residents">all residents &nearr;</a>
-            <a href="index.html">main index &nearr;</a>
-          </nav>
-        </div>
-      </div>
-    </footer>
-  </main>
-
+<body class="dpage">
+<a class="skip" href="#main">skip to content</a>
+<canvas id="sketch" aria-hidden="true"></canvas>
+<div class="ruler l" aria-hidden="true"></div><div class="ruler r" aria-hidden="true"></div>
+<header class="bar"><a class="logo" href="index.html" aria-label="ardiyé, home">ardiyé</a>
+<nav class="nav" aria-label="Main"><a href="index.html#narrative">about</a><a href="index.html#residents">resident</a><a href="index.html#works">works</a><a href="index.html#log">history</a><a href="index.html#contact">export</a></nav>
+<div class="tools"><button class="cmdk" id="cmdk" type="button" aria-label="Open command palette">&#8984;K</button><button class="scheme" id="scheme" type="button" aria-label="Change colour scheme"><i aria-hidden="true"></i><span>bauhaus</span></button><div class="mode" role="group" aria-label="View mode"><button type="button" data-mode="draft" aria-pressed="true">draft</button><button type="button" data-mode="final" aria-pressed="false">final</button></div></div></header>
+<p class="readout" id="readout" aria-hidden="true">x 0000 &nbsp; y 0000</p>
+<button class="reset" id="reset" type="button" hidden>reset layout</button>
+<main id="main">
+<section class="sec dhero"><p class="mono"><a href="index.html">ardiyé</a> / <a href="index.html#residents">residents</a> / resident 01</p>
+<h1>nazım kahramantürk</h1>
+<div class="sel dimg tall" data-name="image — resident 01"><div class="art"><img src="images/nazim-portrait.jpg" width="400" height="500" alt="nazım kahramantürk" decoding="async" style="object-position:center 25%"></div></div></section>
+<section class="sec dbody"><p class="prose">filmmaker and director focusing on raw, unpolished visual storytelling, rhythm-driven editing structures, and bespoke digital tools for independent workflows.</p><aside class="panel"><p class="ph">properties</p><dl class="spec"><div><dt>role</dt><dd>filmmaker / director</dd></div><div><dt>focus</dt><dd>raw cinematography / multi-cam workflow / cadence</dd></div><div><dt>tools</dt><dd>davinci resolve / after effects / swift utilities</dd></div><div><dt>contact</dt><dd><a href="mailto:info@ardiye.art">info@ardiye.art</a></dd></div></dl></aside></section>
+<nav class="dnext" aria-label="Page navigation"><a class="btn" href="index.html#residents">&larr; all files</a><a class="btn" href="project-ambient.html">next: ambient &rarr;</a></nav>
+<footer class="sec exit dfoot" id="contact">
+    <p class="mail" id="mail">info@ardiye.art</p>
+    <div class="actions"><a class="btn solid" href="mailto:info@ardiye.art">send an email</a><button class="btn" type="button" id="copy">copy address</button><span id="copy-note" role="status">open for collaboration</span></div>
+    <!-- TODO: replace with the collective's real profile URLs -->
+    <div class="foot">
+      <div><h4>files</h4><a href="index.html">index</a><a href="artist-nazim.html">nazım kahramantürk</a><a href="project-ambient.html">ambient</a><a href="project-novaqua.html">novaqua</a></div>
+      <div><h4>elsewhere</h4><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">instagram &nearr;</a><a href="https://are.na" target="_blank" rel="noopener noreferrer">are.na &nearr;</a><a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer">soundcloud &nearr;</a></div>
+      
+    </div>
+    <p class="colophon">&copy; <span id="year">2026</span> ardiyé</p></footer>
+</main>
 </body>
 </html>
